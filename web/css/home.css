@@ -1,0 +1,37 @@
+h1 {
+    color:SteelBlue;
+    font-family:charlemagne std;
+    text-align:center;
+    margin-bottom:50px;
+    padding-top: 4%;
+}
+
+#hrline {
+    margin-bottom:100px;
+}
+
+hr {
+    margin:0 5% 0 5%;
+    height:.7px;
+    background-color: #333;
+}
+
+.col-sm-3 {
+    border-style: solid;
+}
+
+div#col-sm-3 span#a {
+    display: inline;
+  }
+  
+#col-sm-3:hover span#a {
+    display: none;
+  }
+  
+#col-sm-3 span#b {
+    display: none;
+  }
+  
+#col-sm-3:hover span#b {
+    display: inline;
+  }

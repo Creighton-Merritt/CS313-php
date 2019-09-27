@@ -1,37 +1,49 @@
+head, body {
+  background-color: lightgray
+}
+
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 h1 {
-    color:SteelBlue;
+    color:rgb(211, 123, 72);
     font-family:charlemagne std;
     text-align:center;
     margin-bottom:50px;
-    padding-top: 4%;
+    padding-top: 5%;
 }
 
 #hrline {
-    margin-bottom:100px;
+  margin-bottom:100px;
 }
 
 hr {
-    margin:0 5% 0 5%;
     height:.7px;
     background-color: #333;
 }
 
-.col-sm-3 {
-    border-style: solid;
+/* .col-sm-4 {
+    border-style: solid; 
+} */
+
+#profile_pic {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-div#col-sm-3 span#a {
-    display: inline;
-  }
-  
-#col-sm-3:hover span#a {
-    display: none;
-  }
-  
-#col-sm-3 span#b {
-    display: none;
-  }
-  
-#col-sm-3:hover span#b {
-    display: inline;
-  }
+
+div {
+  margin:0 5% 0 5%;
+} 
+
+p {
+ 
+} 
+
+span[id^="clickme"]:hover {
+  background: rgb(44, 38, 128);
+  color: white;
+}

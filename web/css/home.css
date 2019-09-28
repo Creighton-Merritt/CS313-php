@@ -5,14 +5,16 @@ head, body {
 body {
   margin-left: 10%;
   margin-right: 10%;
+  font-family:georgia;
+  color:rgb(92, 58, 30);
 }
 
 h1 {
     color:rgb(211, 123, 72);
     font-family:charlemagne std;
     text-align:center;
-    margin-bottom:50px;
-    padding-top: 5%;
+    margin-bottom:35px;
+    padding-top: 6%;
 }
 
 #hrline {
@@ -24,9 +26,9 @@ hr {
     background-color: #333;
 }
 
-/* .col-sm-4 {
-    border-style: solid; 
-} */
+.col-sm-4 {
+    font-size: 120%;
+} 
 
 #profile_pic {
   display: block;
@@ -37,13 +39,20 @@ hr {
 
 div {
   margin:0 5% 0 5%;
-} 
+}  
 
-p {
- 
-} 
 
 span[id^="clickme"]:hover {
-  background: rgb(44, 38, 128);
+  background: rgb(64, 58, 153);
   color: white;
+}
+
+#assignments, #returnHome {
+  float: right;
+  color:rgb(92, 58, 30);
+  font-size: 100%;
+}
+
+#php {
+  float: left;
 }

@@ -20,7 +20,7 @@
 </head>
 <body>
         <div class="container-fluid">
-                <a id="assignments" href="assignments.html">CS-313 Assignments &#9658;</a>
+                <a id="assignments" href="assignments.php">CS-313 Assignments &#9658;</a>
                 <p id="php">     
                     <?php
                     echo "Today is " . date("F d, Y");  

@@ -18,7 +18,7 @@
     </div>
 <body>
         <div class="container-fluid">
-                <a id="returnHome" href="home.html">Home &#9658;</a>
+                <a id="returnHome" href="home.php">Home &#9658;</a>
                 <p id="php">     
                     <?php
                     echo "Today is " . date("F d, Y");  

@@ -18,7 +18,7 @@ h1 {
 }
 
 #hrline {
-  margin-bottom:100px;
+  margin-bottom:50px;
 }
 
 hr {
@@ -26,13 +26,13 @@ hr {
     background-color: #333;
 }
 
-  #product {
-    padding-bottom: 75px;
-  }
+#product {
+  padding-bottom: 40px;
+}
 
 .col-sm-3 {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
 }

@@ -1,0 +1,55 @@
+head, body {
+  background-color: lightgray
+}
+
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family:georgia;
+  color:rgb(92, 58, 30);
+}
+
+h1 {
+    color:rgb(211, 123, 72);
+    font-family:charlemagne std;
+    text-align:center;
+    margin-bottom:35px;
+    padding-top: 6%;
+}
+
+#hrline {
+  margin-bottom:100px;
+}
+
+hr {
+    height:.7px;
+    background-color: #333;
+}
+
+  #product {
+    padding-bottom: 75px;
+  }
+
+.col-sm-3 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+#viewCart {
+  float: right;
+  color:rgb(92, 58, 30);
+  font-size: 100%;
+}

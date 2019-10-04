@@ -13,7 +13,7 @@
     <title>Assignments</title>
 </head>
     <div class="container-fluid">
-        <h1>Coming soon...</h1>
+        <h1>Assignments</h1>
        
     </div>
 <body>
@@ -29,7 +29,9 @@
         <div id="hrline" class="container-fluid">
                 <hr> 
                 <br>
-                <p>In the meantime, enjoy my favorite quotes: "79% of stair accidents happen on the stairs!" - Gumball Watterson</p>
+                <p>"79% of stair accidents happen on the stairs!" - Gumball Watterson</p>
+                <br>
+                <a href="week03product.html">Week 03</a>
         </div>
     
 </body>

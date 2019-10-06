@@ -37,7 +37,8 @@ hr {
   text-align: center;
 }
 
-button {
+
+#abutton {
   border: none;
   outline: 0;
   padding: 12px;
@@ -46,7 +47,8 @@ button {
   text-align: center;
   width: 100%;
   font-size: 18px;
-}
+} 
+
 
 #viewCart {
   float: right;

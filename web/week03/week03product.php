@@ -15,7 +15,6 @@
         $_SESSION["prices"][$i] = $prices[$i] * $qty;
         $_SESSION["cart"][$i] = $i;
         $_SESSION["qty"][$i] = $qty;
-
      }
 
 ?>

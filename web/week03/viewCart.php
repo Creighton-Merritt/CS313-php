@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 
-// delete
+// remove an item
 if ( isset($_GET["delete"]) ) {
     $i = $_GET["delete"];
     $qty = $_SESSION["qty"][$i];
@@ -82,7 +82,7 @@ if (!isset($_SESSION["total"]) ) {
                         <th width="50px"></th>
                         <th><h3>Amount</h3></th>
                         <th width="30px"></th>
-                        <th><h3>Qty</h3></th>
+                        <th><h3>Quantity</h3></th>
                     </tr>
                 <?php
                 $total = 0;

@@ -42,3 +42,9 @@ head, body {
     text-decoration-line: underline;
   }
 
+  a {
+    font-family:georgia;
+    color:rgb(92, 58, 30);
+    text-emphasis: bold;
+  }
+

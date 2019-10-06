@@ -45,6 +45,6 @@ head, body {
   a {
     font-family:georgia;
     color:rgb(92, 58, 30);
-    text-emphasis: bold;
+    font-weight: bold;
   }
 

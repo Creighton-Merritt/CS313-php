@@ -30,6 +30,7 @@ head, body {
     float: left;
     color:rgb(92, 58, 30);
     font-size: 100%;
+    font-weight: bold;
   }
 
   .col-md-6 {

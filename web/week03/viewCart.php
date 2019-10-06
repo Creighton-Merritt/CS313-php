@@ -81,8 +81,8 @@ if (!isset($_SESSION["total"]) ) {
                         <th><h3>Qty</h3></th>
                         <th width="50px"></th>
                         <th><h3>Amount</h3></th>
-                        <th width="30px">Adjust</th>
-                        <th></th>
+                        <th width="30px"></th>
+                        <th><h3>Adjust Qty</h3></th>
                     </tr>
                 <?php
                 $total = 0;

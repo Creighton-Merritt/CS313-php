@@ -82,7 +82,7 @@ if (!isset($_SESSION["total"]) ) {
                         <th width="50px"></th>
                         <th><h3>Amount</h3></th>
                         <th width="30px"></th>
-                        <th><h3>Adjust Qty</h3></th>
+                        <th><h3>Qty</h3></th>
                     </tr>
                 <?php
                 $total = 0;
@@ -95,7 +95,8 @@ if (!isset($_SESSION["total"]) ) {
                         <td width="15px">&nbsp;</td>
                         <td><?php echo( $_SESSION["prices"][$i]); ?></td>
                         <td width="15px">&nbsp;</td>
-                        <td><a href="?delete=<?php echo($i); ?>">-</a><a href="?add=<?php echo($i); ?>">+</a></td>
+                        <td><a href="?delete=<?php echo($i); ?>">-</a></td>
+                        <td><a href="?add=<?php echo($i); ?>">+</a></td>
                     </tr>
                 <?php
                 

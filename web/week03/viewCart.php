@@ -94,8 +94,9 @@ if (!isset($_SESSION["total"]) ) {
                         <td><?php echo( $_SESSION["qty"][$i] ); ?></td>
                         <td width="15px">&nbsp;</td>
                         <td><?php echo( $_SESSION["prices"][$i]); ?></td>
-                        <td width="15px">&nbsp;</td>
-                        <td><a href="?delete=<?php echo($i); ?>"><p>&nbsp;</p>-</a><a href="?add=<?php echo($i); ?>"><p>&nbsp;</p>+</a></td>
+                        <td width="10px">&nbsp;</td>
+                        <td><a href="?delete=<?php echo($i); ?>">-</a></td>
+                        <td><a href="?add=<?php echo($i); ?>">+</a></td>
                         
                     </tr>
                 <?php

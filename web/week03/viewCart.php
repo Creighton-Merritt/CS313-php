@@ -18,6 +18,22 @@ if ( isset($_GET["delete"]) ) {
     }
 }   
 
+// add another
+if ( isset($_GET["add"]) ) {
+    $i = $_GET["add"];
+    $qty = $_SESSION["qty"][$i];
+    $oPrice = $_SESSION["prices"][$i]/$qty;
+    $qty++;
+    if ($qty == 0) {
+        $_SESSION["prices"][$i] = 0;
+        unset($_SESSION["cart"][$i]);
+    } else {
+    $nPrice = ($oPrice * $qty);
+    $_SESSION["qty"][$i] = $qty;
+    $_SESSION["prices"][$i] = $nPrice;
+    }
+} 
+
 // get total
 if (!isset($_SESSION["total"]) ) {
     $_SESSION["total"] = 0;
@@ -65,7 +81,7 @@ if (!isset($_SESSION["total"]) ) {
                         <th><h3>Qty</h3></th>
                         <th width="50px"></th>
                         <th><h3>Amount</h3></th>
-                        <th width="30px"></th>
+                        <th width="30px">Adjust</th>
                         <th></th>
                     </tr>
                 <?php
@@ -79,7 +95,7 @@ if (!isset($_SESSION["total"]) ) {
                         <td width="15px">&nbsp;</td>
                         <td><?php echo( $_SESSION["prices"][$i]); ?></td>
                         <td width="15px">&nbsp;</td>
-                        <td><a href="?delete=<?php echo($i); ?>">Remove from cart</a></td>
+                        <td><a href="?delete=<?php echo($i); ?>">-</a><a href="?add=<?php echo($i); ?>">+</a></td>
                     </tr>
                 <?php
                 

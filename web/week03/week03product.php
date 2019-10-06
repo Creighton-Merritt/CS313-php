@@ -51,7 +51,7 @@
             for ($i=0; $i<3; $i++) {
         ?>
             <div class="col-sm-3"> 
-                <img src="images/harryPotter/<?php echo($products[$i]); ?>.jpg" alt="<?php echo($products[$i]); ?>" width="200px" height="200px"> 
+                <img src="images/<?php echo($products[$i]); ?>.jpg" alt="<?php echo($products[$i]); ?>" width="200px" height="200px"> 
                 <h5><?php echo($products[$i]); ?></h5>
                 <p class="price">$<?php echo($prices[$i]); ?></p>
                 <a id="abutton"" type="button" href="?add=<?php echo($i); ?>">Add to cart</a>
@@ -67,7 +67,7 @@
             for ($i=3; $i<6; $i++) {
         ?>
                     <div class="col-sm-3"> 
-                <img src="images/harryPotter/<?php echo($products[$i]); ?>.jpg" alt="<?php echo($products[$i]); ?>" width="200px" height="200px"> 
+                <img src="images/<?php echo($products[$i]); ?>.jpg" alt="<?php echo($products[$i]); ?>" width="200px" height="200px"> 
                 <h5><?php echo($products[$i]); ?></h5>
                 <p class="price">$<?php echo($prices[$i]); ?></p>
                 <a id="abutton" type="button" href="?add=<?php echo($i); ?>">Add to cart</a>
@@ -83,7 +83,7 @@
             for ($i=6; $i<7; $i++) {
         ?>
                 <div class="col-sm-3"> 
-                <img src="images/harryPotter/<?php echo($products[$i]); ?>.jpg" alt="<?php echo($products[$i]); ?>" width="200px" height="200px"> 
+                <img src="images/<?php echo($products[$i]); ?>.jpg" alt="<?php echo($products[$i]); ?>" width="200px" height="200px"> 
                 <h5><?php echo($products[$i]); ?></h5>
                 <p class="price">$<?php echo($prices[$i]); ?></p>
                 <a id="abutton" type="button" href="?add=<?php echo($i); ?>">Add to cart</a>

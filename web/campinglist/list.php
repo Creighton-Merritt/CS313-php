@@ -39,7 +39,7 @@
         </div>
         <div class="container-fluid">
             <div class="row justify-content-between, justify-content-around">
-                <div class="col-sm-4"> 
+                <div class="col-md-12"> 
                     <?php
                         if ($name == 'Coty') {
                             $name1 = "1";

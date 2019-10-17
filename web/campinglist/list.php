@@ -82,7 +82,7 @@
                                     
                                     $count++;
                                 } else if ($count == 15) {
-                                    echo "</tr><tr>";
+                                    echo "</tr><tr><td>$count $item_name</td>";
                                     $count = 0;
                                 }
                             }

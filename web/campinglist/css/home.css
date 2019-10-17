@@ -54,6 +54,12 @@ head, body {
     font-weight: bold;
   }
   
-  #php {
-    float: left;
+  table {
+    display: table;
+  }
+  table tr {
+    display: table-cell;
+  }
+  table tr td {
+    display: block;
   }

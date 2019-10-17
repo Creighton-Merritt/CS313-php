@@ -55,9 +55,11 @@ head, body {
   }
   
   table {
+    border: 1;
     display: table;
   }
   table tr {
+    width: 40px;
     display: table-cell;
   }
   table tr td {

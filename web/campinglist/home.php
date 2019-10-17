@@ -36,23 +36,17 @@
                     <?php
                         $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id
                             FROM items
-                            WHERE ((person_name_id = 1) OR (person_name_id = 5) or (person_name_id = 8))
+                            WHERE ((person_name_id = 4) OR (person_name_id = 5) or (person_name_id = 7))
                             AND  ((activity_name_id = 3) OR (activity_name_id = 4))");
                         $statement->execute();
-                      
                         
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                         {
                             $item_name = $row['item_name'];
                             $person_name_id = $row['person_name_id'];
-                            $name = $db->prepare("SELECT first_name FROM person WHERE person_id = $person_name_id");
-                            $name->execute();
                             $activity_name_id = $row['activity_name_id'];
-                            $activity = $db->prepare("SELECT activity_name FROM activity WHERE activity_id = $activity_name_id");
-                            $activity->execute();
-                            
                             {
-                                echo "<p><strong>$item_name $name:$activity</strong></p><br>"; 
+                                echo "<p><strong>$item_name $person_name_id:$activity_name_id</strong></p><br>"; 
                             }
                         }
                     ?> 

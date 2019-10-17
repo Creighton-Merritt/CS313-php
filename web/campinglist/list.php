@@ -1,9 +1,12 @@
 <?php
-    require "dbConnect.php";
-    $db = get_db();
+    // require "dbConnect.php";
+    // $db = get_db();
 
     $name = ($_POST["Name"]);
     $location = ($_POST["Location"]);
+    $name1;
+    $name2;
+    $loc1;
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +25,7 @@
 
 
     <div class="container-fluid">
-        <h1>Camping List Database</h1>
+        <h1><?php echo $name?> 's <?php echo $location ?> Packing List</h1>
     </div>
 </head>
     <body>
@@ -33,17 +36,37 @@
         <div id="hrline" class="container-fluid">
                 <hr>
 
-                <p> name: <?=$name ?> location: <?=$location?> </p>
         </div>
         <div class="container-fluid">
             <div class="row justify-content-between, justify-content-around">
                 <div class="col-sm-4"> 
-                    <h2>Coty's list</h2>
                     <?php
+                        if ($name == 'Coty') {
+                            $name1 = 1;
+                            $name2 = 8;
+                        } else if ($name == 'Merritt') {
+                            $name1 = 2;
+                            $name2 = 8;
+                        } else if ($name == 'Ethne') {
+                            $name1 = 3;
+                            $name2 = 7;
+                        } else if ($name == 'Indie') {
+                            $name1 = 4;
+                            $name2 = 7;
+                        }
+
+                        if ($location == "Bear Lake") { 
+                            $loc1 = 1; 
+                        } else if ($location == "Mountains") {
+                            $loc1 = 2; 
+                        } else if ($location == "San Rafael Swell") {
+                             $loc1 = 3;
+                        }
+                        
                         $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id
                             FROM items
-                            WHERE ((person_name_id = 4) OR (person_name_id = 5) or (person_name_id = 7))
-                            AND  ((activity_name_id = 3) OR (activity_name_id = 4))
+                            WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
+                            AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
                             ORDER BY item_name");
                         $statement->execute();
                         

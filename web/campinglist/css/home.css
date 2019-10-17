@@ -1,0 +1,59 @@
+head, body {
+    background-color: lightgray
+  }
+  
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family:georgia;
+    color:rgb(92, 58, 30);
+  }
+  
+  h1 {
+      color:rgb(211, 123, 72);
+      font-family:charlemagne std;
+      text-align:center;
+      margin-bottom:35px;
+      padding-top: 6%;
+  }
+  
+  #hrline {
+    margin-bottom:100px;
+  }
+  
+  hr {
+      height:.7px;
+      background-color: #333;
+  }
+  
+  .col-sm-4 {
+      font-size: 120%;
+  } 
+  
+  #profile_pic {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  
+  div {
+    margin:0 5% 0 5%;
+  }  
+  
+  
+  span[id^="clickme"]:hover {
+    background: rgb(64, 58, 153);
+    color: white;
+  }
+  
+  #assignments, #returnHome {
+    float: right;
+    color:rgb(92, 58, 30);
+    font-size: 100%;
+    font-weight: bold;
+  }
+  
+  #php {
+    float: left;
+  }

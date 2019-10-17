@@ -34,9 +34,12 @@
             <div class="row justify-content-between, justify-content-around">
                 <div class="col-sm-4"> 
                     <?php
-                        $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id FROM items");
+                        $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id
+                            FROM items
+                            WHERE ((person_name_id = 2) OR (person_name_id = 5) or (person_name_id = 8))
+                            AND  ((activity_name_id = 3) OR (activity_name_id = 4))");
                         $statement->execute();
-
+                        
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                         {
                             $item_name = $row['item_name'];

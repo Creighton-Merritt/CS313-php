@@ -42,25 +42,25 @@
                 <div class="col-sm-4"> 
                     <?php
                         if ($name == 'Coty') {
-                            $name1 = 1;
-                            $name2 = 8;
+                            $name1 = "1";
+                            $name2 = "8";
                         } else if ($name == 'Merritt') {
-                            $name1 = 2;
-                            $name2 = 8;
+                            $name1 = "2";
+                            $name2 = "8";
                         } else if ($name == 'Ethne') {
-                            $name1 = 3;
-                            $name2 = 7;
+                            $name1 = "3";
+                            $name2 = "7";
                         } else if ($name == 'Indie') {
-                            $name1 = 4;
-                            $name2 = 7;
+                            $name1 = "4";
+                            $name2 = "7";
                         }
 
                         if ($location == "Bear Lake") { 
-                            $loc1 = 1; 
+                            $loc1 = "1"; 
                         } else if ($location == "Mountains") {
-                            $loc1 = 2; 
+                            $loc1 = "2"; 
                         } else if ($location == "San Rafael Swell") {
-                             $loc1 = 3;
+                             $loc1 = "3";
                         }
                         
                         $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id

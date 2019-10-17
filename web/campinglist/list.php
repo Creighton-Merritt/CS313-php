@@ -70,11 +70,13 @@
                             ORDER BY item_name");
                         $statement->execute();
                         
+                        echo "<table>";
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                         {
+                            
                             $item_name = $row['item_name'];
                             {
-                                echo "<p>$item_name</p>"; 
+                                echo "<tr><td>$item_name</td></tr>"; 
                             }
                         }
                     ?> 

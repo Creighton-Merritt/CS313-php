@@ -38,7 +38,8 @@
                         $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id
                             FROM items
                             WHERE ((person_name_id = 4) OR (person_name_id = 5) or (person_name_id = 7))
-                            AND  ((activity_name_id = 3) OR (activity_name_id = 4))");
+                            AND  ((activity_name_id = 3) OR (activity_name_id = 4))
+                            ORDER BY item_name");
                         $statement->execute();
                         
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC))

@@ -70,7 +70,7 @@
                             ORDER BY item_name");
                         $statement->execute();
                         
-                        echo "<table><tr></tr><tr>";
+                        echo "<table><tr>";
                         $count = 0;
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                         {

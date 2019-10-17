@@ -38,7 +38,7 @@
 
         </div>
         <div class="container-fluid">
-            <div class="row justify-content-between, justify-content-around">
+            <div class="row">
                 <div class="col-md-12"> 
                     <?php
                         if ($name == 'Coty') {
@@ -78,11 +78,11 @@
                             $item_name = $row['item_name'];
                             {
                                 if ($count < 15) {
-                                    echo "<td>$count $item_name</td>"; 
+                                    echo "<td>$item_name</td>"; 
                                     
                                     $count++;
                                 } else if ($count == 15) {
-                                    echo "</tr><tr><td>$count $item_name</td>";
+                                    echo "</tr><tr><td>$item_name</td>";
                                     $count = 0;
                                 }
                             }

@@ -78,12 +78,11 @@
                             $item_name = $row['item_name'];
                             {
                                 if ($count < 15) {
-                                    echo "<td>$item_name</td>"; 
-                                    echo $count;
+                                    echo "<td>$count $item_name</td>"; 
+                                    
                                     $count++;
                                 } else if ($count == 15) {
                                     echo "</tr><tr>";
-                                    echo $count;
                                     $count = 0;
                                 }
                             }

@@ -59,9 +59,10 @@ head, body {
     display: table;
   }
   table tr {
-    width: 40px;
+    
     display: table-cell;
   }
   table tr td {
+    width: 40px;
     display: block;
   }

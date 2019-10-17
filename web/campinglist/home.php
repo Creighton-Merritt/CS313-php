@@ -22,15 +22,40 @@
                 <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
                 <br>
         </div>
-
         <div id="hrline" class="container-fluid">
                 <hr>
         </div>
-
         <div class="container-fluid">
             <div class="row justify-content-between, justify-content-around">
                 <div class="col-sm-4"> 
-                   
+                <?php
+                    try
+                    {
+                        $dbUrl = getenv('DATABASE_URL');
+                    
+                        $dbOpts = parse_url($dbUrl);
+                    
+                        $dbHost = $dbOpts["host"];
+                        $dbPort = $dbOpts["port"];
+                        $dbUser = $dbOpts["user"];
+                        $dbPassword = $dbOpts["pass"];
+                        $dbName = ltrim($dbOpts["path"],'/');
+                    
+                        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                    
+                        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    }
+                    catch (PDOException $ex)
+                    {
+                        echo 'Error!: ' . $ex->getMessage();
+                        die();
+                    }
+
+                    foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
+                    {
+                        echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . '</strong>' . '"' . $row['content'] . '"' . '<br>'; 
+                    }
+                    ?> 
                 </div>
                
             </div>

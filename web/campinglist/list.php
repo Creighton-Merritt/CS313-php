@@ -79,9 +79,11 @@
                             {
                                 if ($count < 15) {
                                     echo "<td>$item_name</td>"; 
+                                    echo $count;
                                     $count++;
                                 } else if ($count == 15) {
                                     echo "</tr><tr>";
+                                    echo $count;
                                     $count = 0;
                                 }
                             }

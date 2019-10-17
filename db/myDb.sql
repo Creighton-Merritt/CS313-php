@@ -33,6 +33,12 @@ FROM
 WHERE ((person_name_id = 3) OR (person_name_id = 5) or (person_name_id = 7))
 AND  ((activity_name_id = 1) OR (activity_name_id = 4))
 ORDER BY item_name;
+    
+
+--test join
+SELECT * FROM items, person, activity
+WHERE items.activity_name_id = activity.activity_id AND items.person_name_id = person.person_id;
+
 
 INSERT INTO items (item_name, person_name_id, activity_name_id) 
 VALUES 

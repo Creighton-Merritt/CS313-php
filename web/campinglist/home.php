@@ -33,6 +33,7 @@
         <div class="container-fluid">
             <div class="row justify-content-between, justify-content-around">
                 <div class="col-sm-4"> 
+                    <h2>Coty's list</h3>
                     <?php
                         $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id
                             FROM items
@@ -43,10 +44,8 @@
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                         {
                             $item_name = $row['item_name'];
-                            $person_name_id = $row['person_name_id'];
-                            $activity_name_id = $row['activity_name_id'];
                             {
-                                echo "<p><strong>$item_name $person_name_id:$activity_name_id</strong></p><br>"; 
+                                echo "<p>$item_name</p>"; 
                             }
                         }
                     ?> 

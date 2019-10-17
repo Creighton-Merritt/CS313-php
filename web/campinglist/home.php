@@ -51,9 +51,9 @@
                         die();
                     }
 
-                    foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
+                    foreach ($db->query('SELECT item_name, person_name_id, activity_name_id FROM items') as $row)
                     {
-                        echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . '</strong>' . '"' . $row['content'] . '"' . '<br>'; 
+                        echo '<strong>' . $row['item_name'] . ' ' . $row['person_name_id'] . ':' . $row['activity_name_id'] . '</strong>' . '<br>'; 
                     }
                     ?> 
                 </div>
@@ -63,3 +63,11 @@
 
 </body>
 </html>
+
+<!-- SELECT 
+    item_name, person_name_id, activity_name_id
+FROM 
+    items
+WHERE ((person_name_id = 2) OR (person_name_id = 5) or (person_name_id = 8))
+AND  ((activity_name_id = 3) OR (activity_name_id = 4))
+ORDER BY item_name; -->

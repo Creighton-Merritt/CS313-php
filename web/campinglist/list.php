@@ -81,7 +81,7 @@
                     $item_name = $row['item_name'];
                     
                     if ($first == true) {
-                        echo "<td><strong>first, $location_name</strong></td>";
+                        echo "<td><strong>$location_name</strong></td>";
                         $first = false;
                     }
 
@@ -89,24 +89,20 @@
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
-                            echo "<td>$item_name</td>";
-                            $count = 1;
                         } else {
-                            echo "</tr><tr><td>$item_name</td>";
-                            $count = 1;
+                            echo "</tr><tr>";
                         }
+                        echo "<td>$item_name</td>";
+                        $count = 0;
                     } 
-                    
+
                     if ($count < 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
-                            $previous_location_name_id = $current_location_name_id;
-                            echo "<td>$item_name</td>"; 
-                            $count++;
-                        } else {
-                            echo "<td>$item_name</td>"; 
-                            $count++;
+                            $previous_location_name_id = $current_location_name_id;  
                         } 
+                        echo "<td>$item_name</td>"; 
+                        $count++;
                     } 
                 }  
                 echo "</tr></table>"

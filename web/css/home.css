@@ -56,4 +56,5 @@ span[id^="clickme"]:hover {
 
 #php {
   float: left;
+  font-weight: bold;
 }

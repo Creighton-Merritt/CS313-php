@@ -79,18 +79,16 @@
                     {
                         if ($count < 15) {
                             if ($previous_location_name_id != $current_location_name_id) {
-                                echo "<td></td><td></td>";
+                                echo "<td>!!!!!</td><td>!!!!!</td>";
                                 $previous_location_name_id = $current_location_name_id;
-                                echo $previous_location_name_id;
                             }
                             echo "<td>$item_name</td>"; 
                             $count++;
 
                         } else if ($count == 15) {
                             if ($previous_location_name_id != $current_location_name_id) {
-                                echo "<td></td><td></td>";
+                                echo "<td>XXXXXX</td><td>XXXXXX</td>";
                                 $previous_location_name_id = $current_location_name_id;
-                                echo $previous_location_name_id;
                             }
                             echo "</tr><tr><td>$item_name</td>";
                             $count = 0;

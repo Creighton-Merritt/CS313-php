@@ -48,14 +48,15 @@ head, body {
     font-weight: bold;
   }
   
-  /* table {
+  table {
     display: table;
   }
   table tr {
     width: 250px;
     display: table-cell;
+    vertical-align: top;
   }
   table tr td {
     width: 250px;
     display: block;
-  } */
+  }

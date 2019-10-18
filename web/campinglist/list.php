@@ -37,7 +37,7 @@
         <div id="hrline" class="container-fluid">
                 <hr>
         </div>
-        <div>
+        <div class="container-fluid">
             <?php
                 if ($name == 'Coty') {
                     $name1 = "1";
@@ -68,7 +68,7 @@
                     ORDER BY item_name");
                 $statement->execute();
                 
-                echo "<table><th></th>";
+                echo "<table><tr>";
                 $count = 0;
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
@@ -76,16 +76,16 @@
                     $item_name = $row['item_name'];
                     {
                         if ($count < 15) {
-                            echo "<tr><td>$item_name</td></tr><"; 
+                            echo "<td>$item_name</td>"; 
                             
                             $count++;
                         } else if ($count == 15) {
-                            echo "<th></th><tr><td>$item_name</td></tr>";
+                            echo "</tr><tr><td>$item_name</td>";
                             $count = 0;
                         }
                     }
                 }
-                echo "</table>"
+                echo "</tr></table>"
             ?> 
         </div>
     </body>

@@ -37,7 +37,7 @@
         <div id="hrline" class="container-fluid">
                 <hr>
         </div>
-        <div class="container-fluid" id="#section-to-print">
+        <div class="container-fluid">
             <?php
                 if ($name == 'Coty') {
                     $name1 = "1";
@@ -94,10 +94,7 @@
                         $count++;
 
                     } else if ($count == 15) {
-                        if ($count == 15 && $previous_location_name_id != $current_location_name_id) {
-                            echo "</tr><tr><td><strong>$location_name</strong></td>";
-                            $previous_location_name_id = $current_location_name_id;
-                        } else {
+                        if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                         }

@@ -76,6 +76,7 @@
                 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
+                    echo "Start";
                     $current_location_name_id = $row['location_name_id'];
                     $location_name = $row['item_location'];
                     $item_name = $row['item_name'];
@@ -90,19 +91,24 @@
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
                             echo "<td>15 if, $count,  $item_name</td>";
                             $count = 1;
+                            // continue;
                         } else {
                             echo "</tr><tr><td>15 else $count,  $item_name</td>";
                             $count = 1;
+                            // continue;
                         }
-                    } else {
+                    } 
+                    if ($count < 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                             echo "<td>if less than, $count,  $item_name</td>"; 
                             $count++;
+                            // continue;
                         } else {
                             echo "<td>else less, $count,  $item_name</td>"; 
                             $count++;
+                            // continue;
                         } 
                     } 
                 }  

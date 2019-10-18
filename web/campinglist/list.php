@@ -68,7 +68,7 @@
                     ORDER BY item_name");
                 $statement->execute();
                 
-                echo "<table><tr>";
+                echo "<table><col>";
                 $count = 0;
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
@@ -76,16 +76,16 @@
                     $item_name = $row['item_name'];
                     {
                         if ($count < 15) {
-                            echo "<td>$item_name</td>"; 
+                            echo "<tr><td>$item_name</td></tr><"; 
                             
                             $count++;
                         } else if ($count == 15) {
-                            echo "</tr><tr><td>$item_name</td>";
+                            echo "</col><col><tr><td>$item_name</td></tr>";
                             $count = 0;
                         }
                     }
                 }
-                echo "</tr></table>"
+                echo "</col></table>"
             ?> 
         </div>
     </body>

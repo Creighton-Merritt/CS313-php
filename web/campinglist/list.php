@@ -94,9 +94,7 @@
                             echo "</tr><tr><td>15 else $count,  $item_name</td>";
                             $count = 1;
                         }
-                    }
-
-                    if ($count < 15) {
+                    } else {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;

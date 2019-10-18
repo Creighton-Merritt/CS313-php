@@ -69,33 +69,32 @@
                 AND  ((activity_name_id = 1) OR (activity_name_id = 4))
                 ORDER BY location_name_id;");
                 $statement->execute();
-                
-                echo "<table><tr>";
+                $location_name = $row['item_location'];
+
+                echo "<table><tr><th><strong>$location_name</strong></th>";
                 $count = 0;
                 $previous_location_name_id = 1;
                 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $current_location_name_id = $row['location_name_id'];
-                    $location_name = $row['item_location'];
                     $item_name = $row['item_name'];
                     {
                         if ($count < 15) {
                             if ($previous_location_name_id != $current_location_name_id) {
                                 //Add join query so I can input location name below in bold
-                                echo "<td></td><td><strong>$location_name</strong></td>";
+                                echo "<th><strong>$location_name</strong></th>";
                                 $previous_location_name_id = $current_location_name_id;
                             }
                             echo "<td>$item_name</td>"; 
                             $count++;
 
                         } else if ($count == 15) {
-                            // Add header with location name
-                            // if ($previous_location_name_id != $current_location_name_id) {
-                            //     echo "</tr><tr></tr><tr><td><strong></strong></td>";
-                            //     $previous_location_name_id = $current_location_name_id;
-                            //     echo "<td>$item_name</td>"
-                            // }
+                            if ($previous_location_name_id != $current_location_name_id) {
+                                //Add join query so I can input location name below in bold
+                                echo "<th><strong>$location_name</strong></th>";
+                                $previous_location_name_id = $current_location_name_id;
+                            }
                             echo "</tr><tr><td>$item_name</td>";
                             $count = 0;
                         }

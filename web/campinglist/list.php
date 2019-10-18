@@ -79,17 +79,19 @@
                     {
                         if ($count < 15) {
                             if ($previous_location_name_id != $current_location_name_id) {
-                                echo "<td>!!!!!</td><td>!!!!!</td>";
+                                //Add join query so I can input location name below in bold
+                                echo "<td><strong></strong></td><";
                                 $previous_location_name_id = $current_location_name_id;
                             }
                             echo "<td>$item_name</td>"; 
                             $count++;
 
                         } else if ($count == 15) {
-                            if ($previous_location_name_id != $current_location_name_id) {
-                                echo "<td>XXXXXX</td><td>XXXXXX</td>";
-                                $previous_location_name_id = $current_location_name_id;
-                            }
+                            // Add header with location name
+                            // if ($previous_location_name_id != $current_location_name_id) {
+                            //     echo "<td>XXXXXX</td><td>XXXXXX</td>";
+                            //     $previous_location_name_id = $current_location_name_id;
+                            // }
                             echo "</tr><tr><td>$item_name</td>";
                             $count = 0;
                         }

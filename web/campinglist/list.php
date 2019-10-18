@@ -30,6 +30,7 @@
 </head>
     <body>
         <div class="container-fluid">
+                <a id="home" href="../home.php">&#9668; Home </a>
                 <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
                 <br>
         </div>

@@ -90,7 +90,7 @@
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                         }
-                        echo "<td>$count, $item_name</td>"; 
+                        echo "<td>$item_name</td>"; 
                         $count++;
 
                     } else if ($count == 15) {
@@ -98,7 +98,7 @@
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                         }
-                        echo "</tr><tr><td>$count, $item_name</td>";
+                        echo "</tr><tr><td>$item_name</td>";
                         $count = 0;
                     }
                 }

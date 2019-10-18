@@ -99,11 +99,10 @@
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
                             echo "<td>$count, $item_name</td>";
                             $previous_location_name_id = $current_location_name_id;
-                            $count = 0;
                         } else {
-                            echo "</tr><tr><td>$count, $item_name</td>";
-                            $count = 0;
+                            echo "<td>$count, $item_name</td></tr><tr>";
                         }
+                        $count = 0;
                     }
                 }
                 echo "</tr></table>"

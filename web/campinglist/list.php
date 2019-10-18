@@ -95,15 +95,14 @@
                         echo "<td>$item_name</td>";
                         $count = 0;
                     } else {
-                        if ($count < 15) {
-                            if ($previous_location_name_id != $current_location_name_id) {
-                                echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
-                                $previous_location_name_id = $current_location_name_id;  
-                            } 
-                            echo "<td>$item_name</td>"; 
-                            $count++;
-                        }
-                    } 
+                        if ($previous_location_name_id != $current_location_name_id) {
+                            echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
+                            $previous_location_name_id = $current_location_name_id;  
+                        } 
+                        echo "<td>$item_name</td>"; 
+                        $count++;
+                    }
+                    
                 }  
                 echo "</tr></table>"
             ?> 

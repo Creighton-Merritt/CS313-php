@@ -83,7 +83,7 @@
                     if ($first == true) {
                         echo "<td><strong>first, $location_name</strong></td>";
                         $first = false;
-                        echo "<td>else less, $item_name</td>"; 
+                        echo "<td>first, $count,  $item_name</td>"; 
                         $count++;
                     }
 
@@ -91,10 +91,10 @@
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
-                            echo "<td>if less than, $item_name</td>"; 
+                            echo "<td>if less than, $count,  $item_name</td>"; 
                             $count++;
                         } else {
-                            echo "<td>else less, $item_name</td>"; 
+                            echo "<td>else less, $count,  $item_name</td>"; 
                             $count++;
                         } 
                     } 
@@ -102,10 +102,10 @@
                     if ($count == 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
-                            echo "<td>15 if, $item_name</td>";
+                            echo "<td>15 if, $count,  $item_name</td>";
                             $count = 1;
                         } else {
-                            echo "</tr><tr><td>15 else $item_name</td>";
+                            echo "</tr><tr><td>15 else $count,  $item_name</td>";
                             $count = 1;
                         }
                     }

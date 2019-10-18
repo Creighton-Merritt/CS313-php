@@ -62,42 +62,46 @@
                 }
                 
                 $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
-                FROM location
-                LEFT JOIN items
-                ON (location_id = location_name_id)
-                WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
-                AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
-                ORDER BY location_name_id;");
+                        FROM location
+                        LEFT JOIN items
+                        ON (location_id = location_name_id)
+                        WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
+                        AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
+                        ORDER BY location_name_id;");
                 $statement->execute();
-                $location_name = $row['item_location'];
 
-                echo "<table><tr><td><strong>$location_name</strong></td>";
+                
                 $count = 0;
                 $previous_location_name_id = 1;
                 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $current_location_name_id = $row['location_name_id'];
+                    $location_name = $row['item_location'];
                     $item_name = $row['item_name'];
-                    {
-                        if ($count < 15) {
-                            if ($previous_location_name_id != $current_location_name_id) {
-                                //Add join query so I can input location name below in bold
-                                echo "<td><strong>$location_name</strong></td>";
-                                $previous_location_name_id = $current_location_name_id;
-                            }
-                            echo "<td>$item_name</td>"; 
-                            $count++;
+                    
+                    if ($first == true) {
+                        echo "<table><tr><td><strong>$location_name</strong></td>";
+                        $first = false;
+                    }
 
-                        } else if ($count == 15) {
-                            if ($previous_location_name_id != $current_location_name_id) {
-                                //Add join query so I can input location name below in bold
-                                echo "<td><strong>$location_name</strong></td>";
-                                $previous_location_name_id = $current_location_name_id;
-                            }
-                            echo "</tr><tr><td>$item_name</td>";
-                            $count = 0;
+                    if ($count < 15) {
+                        if ($previous_location_name_id != $current_location_name_id) {
+                            //Add join query so I can input location name below in bold
+                            echo "<td><strong>$location_name</strong></td>";
+                            $previous_location_name_id = $current_location_name_id;
                         }
+                        echo "<td>$item_name</td>"; 
+                        $count++;
+
+                    } else if ($count == 15) {
+                        if ($previous_location_name_id != $current_location_name_id) {
+                            //Add join query so I can input location name below in bold
+                            echo "<td><strong>$location_name</strong></td>";
+                            $previous_location_name_id = $current_location_name_id;
+                        }
+                        echo "</tr><tr><td>$item_name</td>";
+                        $count = 0;
                     }
                 }
                 echo "</tr></table>"

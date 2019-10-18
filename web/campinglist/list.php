@@ -89,11 +89,14 @@
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
-                        }
-                        echo "<td>$item_name</td>"; 
-                        $count++;
-
+                            echo "<td>$item_name</td>"; 
+                            $count++;
+                        } else {
+                            echo "<td>$item_name</td>"; 
+                            $count++;
+                        } 
                     } 
+                    
                     if ($count == 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";

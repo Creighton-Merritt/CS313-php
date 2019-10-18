@@ -94,11 +94,13 @@
                         $count++;
 
                     } else if ($count == 15) {
-                        if ($previous_location_name_id != $current_location_name_id) {
-                            echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
+                        if ($count == 15 && $previous_location_name_id != $current_location_name_id) {
+                            echo "</tr><tr><td><strong>$location_name</strong></td>";
+                            echo "<td>$item_name</td>";
                             $previous_location_name_id = $current_location_name_id;
+                        } else {
+                            echo "</tr><tr><td>$item_name</td>";
                         }
-                        echo "</tr><tr><td>$item_name</td>";
                         $count = 0;
                     }
                 }

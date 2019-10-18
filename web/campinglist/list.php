@@ -88,13 +88,12 @@
                     if ($count == 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
+                            $previous_location_name_id = $current_location_name_id;
                             echo "<td>15 if, $count,  $item_name</td>";
                             $count = 1;
-                            continue;
                         } else {
                             echo "</tr><tr><td>15 else $count,  $item_name</td>";
                             $count = 1;
-                            continue;
                         }
                     } 
                     if ($count < 15) {
@@ -103,11 +102,9 @@
                             $previous_location_name_id = $current_location_name_id;
                             echo "<td>if less than, $count,  $item_name</td>"; 
                             $count++;
-                            continue;
                         } else {
                             echo "<td>else less, $count,  $item_name</td>"; 
                             $count++;
-                            continue;
                         } 
                     } 
                 }  

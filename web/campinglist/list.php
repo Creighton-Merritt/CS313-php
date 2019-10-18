@@ -71,25 +71,27 @@
                 echo "<table><tr>";
                 $count = 0;
                 $previous_location_name_id = 1;
-                echo $previous_location_name_id;
                 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $current_location_name_id = $row['location_name_id'];
-                    echo $current_location_name_id;
                     $item_name = $row['item_name'];
                     {
-                        if ($previous_location_name_id != $current_location_name_id) {
-                            echo "<br><br>";
-                            $previous_location_name_id = $current_location_name_id;
-                            echo $previous_location_name_id;
-                        }
-
                         if ($count < 15) {
+                            if ($previous_location_name_id != $current_location_name_id) {
+                                echo "<td></td><td></td>";
+                                $previous_location_name_id = $current_location_name_id;
+                                echo $previous_location_name_id;
+                            }
                             echo "<td>$item_name</td>"; 
-                            
                             $count++;
+
                         } else if ($count == 15) {
+                            if ($previous_location_name_id != $current_location_name_id) {
+                                echo "<td></td><td></td>";
+                                $previous_location_name_id = $current_location_name_id;
+                                echo $previous_location_name_id;
+                            }
                             echo "</tr><tr><td>$item_name</td>";
                             $count = 0;
                         }

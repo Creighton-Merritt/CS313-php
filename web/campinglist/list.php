@@ -69,8 +69,7 @@
                         AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
                         ORDER BY location_name_id;");
                 $statement->execute();
-
-                
+                echo "<table><tr>";
                 $count = 0;
                 $previous_location_name_id = 1;
                 
@@ -81,7 +80,7 @@
                     $item_name = $row['item_name'];
                     
                     if ($first == true) {
-                        echo "<table><tr><td><strong>$location_name</strong></td>";
+                        echo "<td><strong>$location_name</strong></td>";
                         $first = false;
                     }
 

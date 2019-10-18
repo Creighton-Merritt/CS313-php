@@ -42,14 +42,19 @@ head, body {
   }
   
   table {
-    border: 1;
+    margin-top: 0;
+    margin-left: 0;
     display: table;
   }
   table tr {
+    margin-top: 0;
+    margin-left: 0;
     width: 250px;
     display: table-cell;
   }
   table tr td {
+    margin-top: 0;
+    margin-left: 0;
     width: 250px;
     display: block;
   }

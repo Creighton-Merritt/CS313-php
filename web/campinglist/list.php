@@ -61,14 +61,11 @@
                         $loc1 = "3";
                 }
                 
-                $statement = $db->prepare("SELECT items.item_name, items.person_name_id, items.activity_name_id, 
-                                items.location_name_id, location.item_location
-                                    FROM location
-                                    LEFT JOIN items
-                                    ON (location.location_id = items.location_name_id)
-                                    WHERE ((items.person_name_id = $name1) OR (items.person_name_id = $name2) or (items.person_name_id = 5))
-                                    AND  ((items.activity_name_id = $loc1) OR (items.activity_name_id = 4))
-                                    ORDER BY items.location_name_id;");
+                $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id
+                    FROM items
+                    WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
+                    AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
+                    ORDER BY location_name_id;");
                 $statement->execute();
                 
                 echo "<table><tr>";
@@ -77,14 +74,13 @@
                 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
-                    $current_location_name_id = $row['items.location_name_id'];
-                    $location_name = $row['location.item_location'];
-                    $item_name = $row['items.item_name'];
+                    $current_location_name_id = $row['location_name_id'];
+                    $item_name = $row['item_name'];
                     {
                         if ($count < 15) {
                             if ($previous_location_name_id != $current_location_name_id) {
                                 //Add join query so I can input location name below in bold
-                                echo "<td></td><td><strong>$location_name</strong></td>";
+                                //echo "<td></td><td><strong>$location_name</strong></td>";
                                 $previous_location_name_id = $current_location_name_id;
                             }
                             echo "<td>$item_name</td>"; 
@@ -92,11 +88,12 @@
 
                         } else if ($count == 15) {
                             // Add header with location name
-                            if ($previous_location_name_id != $current_location_name_id) {
-                                echo "</tr><tr></tr><tr><td><strong>$location_name</strong></td>";
-                                $previous_location_name_id = $current_location_name_id;
-                                echo "<td>$item_name</td>";
-                            }
+                            // if ($previous_location_name_id != $current_location_name_id) {
+                            //     echo "</tr><tr></tr><tr><td><strong></strong></td>";
+                            //     $previous_location_name_id = $current_location_name_id;
+                            //     echo "<td>$item_name</td>"
+                            // }
+                            echo "</tr><tr><td>$item_name</td>";
                             $count = 0;
                         }
                     }

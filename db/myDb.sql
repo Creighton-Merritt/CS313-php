@@ -50,6 +50,15 @@ WHERE ((person_name_id = 3) OR (person_name_id = 5) or (person_name_id = 7))
 AND  ((activity_name_id = 1) OR (activity_name_id = 4))
 ORDER BY items.location_name_id;
 
+SELECT items.item_name, items.person_name_id, items.activity_name_id, items.location_name_id, location.item_location
+FROM location
+LEFT JOIN items
+ON (location.location_id = items.location_name_id)
+WHERE ((items.person_name_id = 3) OR (items.person_name_id = 7) or (items.person_name_id = 5))
+AND  ((items.activity_name_id = 1) OR (items.activity_name_id = 4))
+ORDER BY items.location_name_id;
+
+
 INSERT INTO items (item_name, person_name_id, activity_name_id, location_name_id) 
 VALUES 
     ('Hydration packs', 5, 3, 2);

@@ -48,7 +48,7 @@ head, body {
     font-weight: bold;
   }
   
-  table {
+  /* table {
     display: table;
   }
   table tr {
@@ -58,4 +58,4 @@ head, body {
   table tr td {
     width: 250px;
     display: block;
-  }
+  } */

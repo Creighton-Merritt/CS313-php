@@ -102,7 +102,7 @@
                             echo "<td>$count, $item_name</td>";
                             $previous_location_name_id = $current_location_name_id;
                         } else {
-                            echo "<td>$count, $item_name</td></tr><tr>";
+                            echo "</tr><tr<td>$count, $item_name</td></tr><tr>";
                         }
                         $count = 0;
                     }

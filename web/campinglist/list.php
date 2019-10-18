@@ -71,6 +71,7 @@
                 $statement->execute();
                 echo "<table><tr>";
                 $count = 0;
+                $first = true;
                 $previous_location_name_id = 1;
                 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))

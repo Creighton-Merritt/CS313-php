@@ -107,7 +107,7 @@
                             $count++;
                         } 
                     } 
-                }
+                }  
                 echo "</tr></table>"
             ?> 
         </div>

@@ -95,7 +95,7 @@
                             $previous_location_name_id = $current_location_name_id;
                             $count++;
                         }
-                        echo "<td>Count should be zero$item_name</td>"; 
+                        echo "<td>$count, $item_name</td>"; 
                         $count++;
 
                     } else if ($count == 15) {

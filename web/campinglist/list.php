@@ -93,14 +93,16 @@
                         echo "<td>$item_name</td>"; 
                         $count++;
 
-                    } else if ($count == 15) {
-                        if ($count == 15 && $previous_location_name_id != $current_location_name_id) {
+                    } 
+                    if ($count == 15) {
+                        if ($previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
                             echo "<td>$item_name</td>";
+                            $count = 0;
                         } else {
                             echo "</tr><tr><td>$item_name</td>";
+                            $count = 0;
                         }
-                        $count = 0;
                     }
                 }
                 echo "</tr></table>"

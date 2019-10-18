@@ -37,7 +37,7 @@
         <div id="hrline" class="container-fluid">
                 <hr>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" id="#section-to-print">
             <?php
                 if ($name == 'Coty') {
                     $name1 = "1";

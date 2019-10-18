@@ -70,7 +70,7 @@
                         ORDER BY location_name_id;");
                 $statement->execute();
                 echo "<table><tr>";
-                $count = 1;
+                $count = 0;
                 $first = true;
                 $previous_location_name_id = 1;
                 

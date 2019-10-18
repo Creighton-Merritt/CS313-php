@@ -81,14 +81,14 @@
                     $item_name = $row['item_name'];
                     
                     if ($first == true) {
-                        echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
+                        echo "<td><strong>$location_name</strong></td>";
                         $first = false;
                     }
 
                     if ($count < 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             //Add join query so I can input location name below in bold
-                            echo "<td><strong>$location_name</strong></td>";
+                            echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                         }
                         echo "<td>$item_name</td>"; 
@@ -97,7 +97,7 @@
                     } else if ($count == 15) {
                         if ($previous_location_name_id != $current_location_name_id) {
                             //Add join query so I can input location name below in bold
-                            echo "<td><strong>$location_name</strong></td>";
+                            echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                         }
                         echo "</tr><tr><td>$item_name</td>";

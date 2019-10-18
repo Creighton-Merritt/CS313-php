@@ -62,5 +62,6 @@ head, body {
   }
 
   .roomHeader {
-    margin-top: 8px;
+    margin-top: 15px;
+    text-align: center;
   }

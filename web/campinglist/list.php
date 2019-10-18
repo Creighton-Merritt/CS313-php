@@ -70,7 +70,7 @@
                         ORDER BY location_name_id;");
                 $statement->execute();
                 echo "<table><tr>";
-                $count = 0;
+                $count = 1;
                 $first = true;
                 $previous_location_name_id = 1;
                 
@@ -89,6 +89,7 @@
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
+                            $count++;
                         }
                         echo "<td>$count, $item_name</td>"; 
                         $count++;

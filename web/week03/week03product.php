@@ -37,6 +37,7 @@
         <h1>Harry Potter Wax Seal Stamp Supplies</h1>
     </div>
     <div class="container-fluid">
+        <a id="home" href="../home.php">&#9668; Home </a>
         <a id="viewCart" href="viewCart.php">View Shopping Cart &#9658;</a>
         <br>
     </div>

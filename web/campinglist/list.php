@@ -80,7 +80,7 @@
                         if ($count < 15) {
                             if ($previous_location_name_id != $current_location_name_id) {
                                 //Add join query so I can input location name below in bold
-                                echo "<td></td><td><strong>$current_location_name_id</strong></td>";
+                                //echo "<td></td><td><strong>$location_name</strong></td>";
                                 $previous_location_name_id = $current_location_name_id;
                             }
                             echo "<td>$item_name</td>"; 

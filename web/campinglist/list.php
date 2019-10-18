@@ -60,7 +60,7 @@
                 } else if ($location == "San Rafael Swell") {
                         $loc1 = "3";
                 }
-
+                
                 $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
                         FROM location
                         LEFT JOIN items
@@ -86,24 +86,22 @@
                     }
 
                     if ($count < 15) {
-                        if ($count == 0 && $previous_location_name_id != $current_location_name_id) {
-                            echo "<td><strong>$location_name</strong></td>";
-                        } else if ($previous_location_name_id != $current_location_name_id) {
+                        if ($previous_location_name_id != $current_location_name_id) {
                             echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
                         }
-                        echo "<td>$count, $item_name</td>"; 
+                        echo "<td>$item_name</td>"; 
                         $count++;
 
-                    }  
-                    if ($count == 15) {
+                    } else if ($count == 15) {
                         if ($count == 15 && $previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
                             $previous_location_name_id = $current_location_name_id;
-                            echo "<td>$item_name</td>";
                         } else {
-                            echo "<td>$item_name</td></tr><tr>";
+                            echo "<td class=\"roomHeader\"><strong>$location_name</strong></td>";
+                            $previous_location_name_id = $current_location_name_id;
                         }
+                        echo "</tr><tr><td>$item_name</td>";
                         $count = 0;
                     }
                 }

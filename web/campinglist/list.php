@@ -81,7 +81,7 @@
                     $item_name = $row['item_name'];
                     
                     if ($first == true) {
-                        echo "<td><strong>$location_name</strong></td>";
+                        echo '<td class="roomHeader"><strong>$location_name</strong></td>';
                         $first = false;
                     }
 

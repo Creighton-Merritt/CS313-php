@@ -60,3 +60,7 @@ head, body {
     width: 250px;
     display: block;
   }
+
+  .roomHeader {
+    margin-top: 8px;
+  }

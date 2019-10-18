@@ -66,8 +66,8 @@
                                     FROM location
                                     LEFT JOIN items
                                     ON (location.location_id = items.location_name_id)
-                                    WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
-                                    AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
+                                    WHERE ((items.person_name_id = $name1) OR (items.person_name_id = $name2) or (items.person_name_id = 5))
+                                    AND  ((items.activity_name_id = $loc1) OR (items.activity_name_id = 4))
                                     ORDER BY items.location_name_id;");
                 $statement->execute();
                 

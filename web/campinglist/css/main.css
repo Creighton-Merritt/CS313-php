@@ -11,9 +11,6 @@ head, body {
 
   /* override styles when printing */
   @media print {
-    body * {
-      visibility: hidden;
-    }
     #section-to-print, #section-to-print * {
       visibility: visible;
     }
@@ -21,6 +18,9 @@ head, body {
       position: absolute;
       left: 0;
       top: 0;
+    }
+    body * {
+      visibility: hidden;
     }
   }
   

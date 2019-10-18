@@ -95,9 +95,7 @@
                             echo "<td>else less than,$item_name</td>"; 
                             $count++;
                         } 
-                    } 
-
-                    if ($count == 15) {
+                    } else {
                         if ($previous_location_name_id != $current_location_name_id) {
                             echo "</tr><tr><td><strong>$location_name</strong></td>";
                             echo "<td>15 if, $item_name</td>";

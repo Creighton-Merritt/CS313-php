@@ -17,13 +17,13 @@
     $person_id = $pid->fetch();
     $activity_id = $aid->fetch();
     $location_id = $lid->fetch();
-    $stmt = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
-                        VALUES (:newItem, :person_id, :activity_id, :location_id);");
-    $stmt->bindValue(':newItem', $newItem, PDO::PARAM_STR);
-    $stmt->bindValue(':person_id', $person_id, PDO::PARAM_INT);
-    $stmt->bindValue(':activity_id', $activity_id, PDO::PARAM_INT);
-    $stmt->bindValue(':location_id', $location_id, PDO::PARAM_INT);
-    $stmt->execute();
+    // $stmt = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
+    //                     VALUES (:newItem, :person_id, :activity_id, :location_id);");
+    // $stmt->bindValue(':newItem', $newItem, PDO::PARAM_STR);
+    // $stmt->bindValue(':person_id', $person_id, PDO::PARAM_INT);
+    // $stmt->bindValue(':activity_id', $activity_id, PDO::PARAM_INT);
+    // $stmt->bindValue(':location_id', $location_id, PDO::PARAM_INT);
+    // $stmt->execute();
     ?>
     <!DOCTYPE html>
     <html lang="en">

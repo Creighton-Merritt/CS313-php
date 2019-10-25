@@ -14,9 +14,9 @@
     $pid->execute();
     $aid->execute();
     $lid->execute();
-    $person_id = $pid->fetch(PDO::FETCH_ASSOC);
-    $activity_id = $aid->fetch(PDO::FETCH_ASSOC);
-    $location_id = $lid->fetch(PDO::FETCH_ASSOC);
+    $person_id = $pid->fetch();
+    $activity_id = $aid->fetch();
+    $location_id = $lid->fetch();
     $stmt = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
                         VALUES (:newItem, :person_id, :activity_id, :location_id);");
     $stmt->bindValue(':newItem', $newItem, PDO::PARAM_STR);

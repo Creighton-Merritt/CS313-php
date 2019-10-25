@@ -7,7 +7,15 @@
 
     require('dbConnect.php');
     $db = get_db();
+    
+    //** */ This works well and is short and sweet, but I'm not sure if inserting this way without parameters is a good practice? */
+    $statement = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
+                VALUES ('$newItem',(SELECT person_id from person where first_name = '$name'),
+                (SELECT activity_id from activity where activity_name = '$activity'),
+                (SELECT location_id from location where item_location = '$location'));");
+    $statement->execute();
 
+    //**This works just like the one above, but I feel like it's a bit messy. I prefer the shorter method above. I'm not sure which method is better */
     // $pid = $db->prepare("SELECT person_id FROM person WHERE first_name = '$name';");
     // $aid = $db->prepare("SELECT activity_id FROM activity WHERE activity_name = '$activity';");
     // $lid = $db->prepare("SELECT location_id FROM location WHERE item_location = '$location';");
@@ -27,17 +35,8 @@
     // $stmt->bindValue(':activity_id', $activity_id, PDO::PARAM_INT);
     // $stmt->bindValue(':location_id', $location_id, PDO::PARAM_INT);
     // $stmt->execute();
-    
-    // // This works in postresql, but I can't get it to work with php, so I used the solution above
-    $statement = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
-    VALUES ('$newItem',(SELECT person_id from person where first_name = '$name'),
-    (SELECT activity_id from activity where activity_name = '$activity'),
-    (SELECT location_id from location where item_location = '$location'));");
-    $statement->execute();
 
-
-    if(isset($_POST["name"])) {
-    header("Location: additems.php");
-    exit;
-    }
+    $new_page = "additems.php";
+    header("Location: $new_page");
+    exit;   
 ?>

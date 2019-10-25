@@ -8,7 +8,6 @@
     require('dbConnect.php');
     $db = get_db();
     $result = pg_query($db, "SELECT person_id FROM person WHERE first_name = '$name'");
-    $pid = pg_fetch($result);
 
     // $pid = $db->prepare("SELECT person_id FROM person WHERE first_name = '$name';");
     // $aid = $db->prepare("SELECT activity_id FROM activity WHERE activity_name = '$activity';");
@@ -37,7 +36,7 @@
     </head>
     <body>
         <?php
-        echo "<p>$newItem, $pid, $activity_id, $location_id</p>";
+        echo "<p>$newItem, $result, $activity_id, $location_id</p>";
         ?>
     </body>
     </html>

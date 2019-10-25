@@ -32,6 +32,10 @@
     echo "<p>$name</p><br>";
     echo "<p>$activity</p><br>";
     echo "<p>$location</p><br>";
+    echo "<p>INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
+    VALUES ('$newItem',(SELECT person_id from person where first_name = '$name'),
+    (SELECT activity_id from activity where activity_name = '$activity'),
+    (SELECT location_id from location where location_name = '$item_location'))<p>"
     ?>
 </body>
 </html>

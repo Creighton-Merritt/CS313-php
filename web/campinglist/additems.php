@@ -45,27 +45,30 @@
             <select name="Name">
                 <option hidden disabled selected value></option>
                 <?php
-                while ($row = $pstmt->fetch(PDO::FETCH_ASSOC))
+                while ($row = $pstmt->fetch(PDO::FETCH_ASSOC)){
                     $name = $row['first_name'];
                     echo "<option value='$name'>$name</option>";
+                }
                 ?>
             </select><br>       
             Assign to activity:
             <select name="Activity">
                 <option hidden disabled selected value></option>
                 <?php
-                while ($row = $astmt->fetch(PDO::FETCH_ASSOC))
+                while ($row = $astmt->fetch(PDO::FETCH_ASSOC)) {
                     $activity = $row['activity_name'];
                     echo "<option value='$activity'>$activity</option>";
+                }
                 ?>
             </select><br>
             Where is it located in the house?:
             <select name="Location">
                 <option hidden disabled selected value></option>
                 <?php
-                while ($row = $lstmt->fetch(PDO::FETCH_ASSOC))
+                while ($row = $lstmt->fetch(PDO::FETCH_ASSOC)) {
                     $location = $row['item_location'];
                     echo "<option value='$location'>$location</option>";
+                }
                 ?>
             </select><br>
             <input type="submit" value="Submit">

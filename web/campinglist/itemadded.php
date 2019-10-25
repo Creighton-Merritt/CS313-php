@@ -7,7 +7,6 @@
 
     require('dbConnect.php');
     $db = get_db();
-    $result = pg_query($db, "SELECT person_id FROM person WHERE first_name = '$name'");
 
     // $pid = $db->prepare("SELECT person_id FROM person WHERE first_name = '$name';");
     // $aid = $db->prepare("SELECT activity_id FROM activity WHERE activity_name = '$activity';");
@@ -15,7 +14,8 @@
     // $pid->execute();
     // $aid->execute();
     // $lid->execute();
-    // $person_id = $pid->fetch();
+        $row = $pid->fetch(PDO::FETCH_ASSOC);
+        $person_id = $row['person_id'];
     // $activity_id = $aid->fetch();
     // $location_id = $lid->fetch();
     // $stmt = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
@@ -36,7 +36,7 @@
     </head>
     <body>
         <?php
-        echo "<p>$newItem, $result, $activity_id, $location_id</p>";
+        echo "<p>$newItem, $person_id, $activity_id, $location_id</p>";
         ?>
     </body>
     </html>

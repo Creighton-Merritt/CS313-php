@@ -51,7 +51,7 @@
                 }
                 ?>
             </select><br>       
-            Assign to activity:
+            Assign to camping location:
             <select name="Activity">
                 <option hidden disabled selected value></option>
                 <?php

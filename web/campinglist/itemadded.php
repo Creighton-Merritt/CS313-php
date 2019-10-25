@@ -1,8 +1,12 @@
 <?php
+
     $newItem = htmlspecialchars($_POST['newItem']);
     $name = htmlspecialchars($_POST['Name']);
     $activity = htmlspecialchars($_POST['Activity']);
     $location = htmlspecialchars($_POST['Location']);
+
+    require('dbConnect.php');
+    $db = get_db();
 
     $statement = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
     VALUES ('$newItem',(SELECT person_id from person where first_name = '$name'),

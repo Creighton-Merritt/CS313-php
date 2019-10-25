@@ -1,5 +1,5 @@
 <?php
-    require "dbConnect.php";
+    require ('dbConnect.php');
     $db = get_db();
 
     $newItem = htmlspecialchars($_POST['newItem']);
@@ -22,10 +22,11 @@
             (SELECT activity_id from activity where activity_name = '$activity'),
             (SELECT location_id from location where location_name = '$item_location'));");
             $statement->execute();
+            echo "<p>loaded</p>";
 
-            $new_page = "additems.php";
-            header("Location: $new_page");
-            die();
+            // $new_page = "additems.php";
+            // header("Location: $new_page");
+            // die();
         ?>
 
     </body>

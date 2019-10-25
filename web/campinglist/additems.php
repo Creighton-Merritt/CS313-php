@@ -1,5 +1,5 @@
 <?php
-    require "dbConnect.php";
+    require ('dbConnect.php');
     $db = get_db();
     $pstmt = $db->prepare("SELECT first_name from person;");
     $pstmt->execute();

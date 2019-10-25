@@ -27,10 +27,11 @@
     <title>Document</title>
 </head>
 <body>
-    <p><?$newItem?>></p>
-    <p><?$name?>></p>
-    <p><?$activity?>></p>
-    <p><?$location?>></p>
-    
+    <?php
+    echo "<p>$newItem</p><br>";
+    echo "<p>$name</p><br>";
+    echo "<p>$activity</p><br>";
+    echo "<p>$location</p><br>";
+    ?>
 </body>
 </html>

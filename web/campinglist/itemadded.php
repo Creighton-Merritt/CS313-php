@@ -36,8 +36,8 @@
     // $statement->execute();
 
 
-    // if(isset($_POST["name"])) {
-    // header("Location: additems.php");
-    // exit;
-    // }
+    if(isset($_POST["name"])) {
+    header("Location: additems.php");
+    exit;
+    }
 ?>

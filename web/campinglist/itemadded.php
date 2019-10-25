@@ -8,14 +8,14 @@
     require('dbConnect.php');
     $db = get_db();
 
-    // $pid = $db->prepare("SELECT person_id FROM person WHERE first_name = '$name';");
+    $pid = $db->prepare("SELECT person_id FROM person WHERE first_name = '$name';");
     // $aid = $db->prepare("SELECT activity_id FROM activity WHERE activity_name = '$activity';");
     // $lid = $db->prepare("SELECT location_id FROM location WHERE item_location = '$location';");
-    // $pid->execute();
+    $pid->execute();
     // $aid->execute();
     // $lid->execute();
-        $row = $pid->fetch(PDO::FETCH_ASSOC);
-        $person_id = $row['person_id'];
+    $row = $pid->fetch(PDO::FETCH_ASSOC);
+    $person_id = $row['person_id'];
     // $activity_id = $aid->fetch();
     // $location_id = $lid->fetch();
     // $stmt = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)

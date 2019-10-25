@@ -3,9 +3,9 @@
     $db = get_db();
     $pstmt = $db->prepare("SELECT first_name from person;");
     $pstmt->execute();
-    $lstmt = $db->prepare("SELECT item_location from location ORDER BY DECENDING;");
+    $lstmt = $db->prepare("SELECT item_location from location;");
     $lstmt->execute();
-    $astmt = $db->prepare("SELECT activity_name from activity;");
+    $astmt = $db->prepare("SELECT activity_name from activity ORDER BY activity_name DESC;");
     $astmt->execute();
 ?>
 

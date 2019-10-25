@@ -33,7 +33,7 @@
     // (SELECT location_id from location where location_name = '$location'));");
     // $statement->execute();
 
-    $new_page = "additems.php";
-    header("Location: $new_page");
+    
+    header("Location: additems.php");
     die();
 ?>

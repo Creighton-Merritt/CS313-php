@@ -5,7 +5,7 @@
     $pstmt->execute();
     $lstmt = $db->prepare("SELECT item_location from location;");
     $lstmt->execute();
-    $astmt = $db->prepare("SELECT activity_name from activity ORDER BY activity_name DESC;");
+    $astmt = $db->prepare("SELECT activity_name from activity ORDER BY activity_id;");
     $astmt->execute();
 ?>
 

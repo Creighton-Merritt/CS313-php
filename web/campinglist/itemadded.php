@@ -10,7 +10,7 @@
 
     $pid = $db->prepare("SELECT person_id FROM person WHERE first_name = '$name';");
     $aid = $db->prepare("SELECT activity_id FROM activity WHERE activity_name = '$activity';");
-    $lid = $db->prepare("SELECT location_id FROM location WHERE location_name = '$location';");
+    $lid = $db->prepare("SELECT location_id FROM location WHERE item_location = '$location';");
     $pid->execute();
     $aid->execute();
     $lid->execute();
@@ -45,7 +45,7 @@
     // $statement = $db->prepare("INSERT INTO items(item_name, person_name_id, activity_name_id, location_name_id)
     // VALUES ('$newItem',(SELECT person_id from person where first_name = '$name'),
     // (SELECT activity_id from activity where activity_name = '$activity'),
-    // (SELECT location_id from location where location_name = '$location'));");
+    // (SELECT location_id from location where item_location = '$location'));");
     // $statement->execute();
 <?php
 

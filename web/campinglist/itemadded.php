@@ -24,6 +24,21 @@
     $stmt->bindValue(':activity_id', $activity_id, PDO::PARAM_INT);
     $stmt->bindValue(':location_id', $location_id, PDO::PARAM_INT);
     $stmt->execute();
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <?php
+        echo "<p>$newItem, $person_id, $activity_id, $location_id</p>";
+        ?>
+    </body>
+    </html>
 
 
     // This works in postresql, but I can't get it to work with php, so I used the solution above
@@ -32,8 +47,10 @@
     // (SELECT activity_id from activity where activity_name = '$activity'),
     // (SELECT location_id from location where location_name = '$location'));");
     // $statement->execute();
+<?php
 
-    
-    header("Location: additems.php");
-    die();
+    // if(isset($_POST["name"])) {
+    // header("Location: additems.php");
+    // exit;
+    // }
 ?>

@@ -1,0 +1,73 @@
+<?php
+    require "dbConnect.php";
+    $db = get_db();
+    $pstmt = $db->prepare("SELECT first_name from person;");
+    $pstmt->execute();
+    $lstmt = $db->prepare("SELECT item_location from location;");
+    $lstmt->execute();
+    $astmt = $db->prepare("SELECT activity_name from activity;");
+    $astmt->execute();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- <script src="javascript/main.js"></script> -->
+
+
+    <div class="container-fluid">
+        <h1>Add to Database</h1>
+    </div>
+</head>
+    <body>
+        <div class="container-fluid">
+                <a id="home" href="main.html">&#9668; Back </a>
+                <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
+                <br>
+        </div>
+        <div id="hrline" class="container-fluid">
+                <hr>
+        </div>
+        <div class="container-fluid">
+        <form action="itemadded.php" method="post">
+            Item name:<br>
+            <input type="text" name="newItem"><br>
+            Assign to person:
+            <select name="Name">
+                <option hidden disabled selected value> -- select an option -- </option>
+                <?php
+                while ($row = $pstmt->fetch(PDO::FETCH_ASSOC))
+                    echo '<option value="$row["first_name"]">$row["first_name"]</option>';
+                ?>
+            </select>            
+            Assign to activity:
+            <select name="Activity">
+                <option hidden disabled selected value></option>
+                <?php
+                while ($row = $astmt->fetch(PDO::FETCH_ASSOC))
+                    echo '<option value="$row["activity_name"]">$row["activity_name"]</option>';
+                ?>
+            </select>
+            Where is it located in the house?:
+            <select name="Location">
+                <option hidden disabled selected value></option>
+                <?php
+                while ($row = $lstmt->fetch(PDO::FETCH_ASSOC))
+                    echo '<option value="$row["item_location"]">$row["item_location"]</option>';
+                ?>
+            </select> 
+            <input type="submit" value="Submit">
+        </form>    
+
+        </div>
+    </body>
+</html>

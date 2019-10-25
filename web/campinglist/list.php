@@ -2,8 +2,8 @@
     require "dbConnect.php";
     $db = get_db();
 
-    $name = ($_POST["Name"]);
-    $location = ($_POST["Location"]);
+    $name = htmlspecialchars($_POST['Name']);
+    $location = htmlspecialchars($_POST['Location']);
     $name1;
     $name2;
     $loc1;

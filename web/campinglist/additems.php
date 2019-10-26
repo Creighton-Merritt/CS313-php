@@ -71,7 +71,7 @@
                     }
                     ?>
                 </select><br>
-                <input type="submit" value="Submit"><br>
+                <input type="submit" value="submit"><br>
             </form>  
         </div>
     </body>

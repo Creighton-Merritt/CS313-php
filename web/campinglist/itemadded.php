@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
         header("Location: $new_page");
         exit;   
     } else {
-        ?><span><?php echo "Please select a choice from all fields";?></span> <?php
+        echo "<h2>Please select a choice from all fields<h2>";
     }
 }
 ?>

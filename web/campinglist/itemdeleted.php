@@ -6,7 +6,7 @@
         ?>
             <meta http-equiv="refresh" content="3;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
         <?php
-    } else {
+    } else if (isset($_POST['delete'])) {
         require('dbConnect.php');
         $db = get_db();
         foreach ($itemid as $id)

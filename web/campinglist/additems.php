@@ -38,8 +38,8 @@
                 <hr>
         </div>
         <div class="container-fluid">
-            <div class = "row justify-content-between, justify-content-around">
-                <div class="col-md-5"> 
+            <div class = "row">
+                <div class="col-sm"> 
                     <h3>Add item to list</h3>
                     <form action="itemadded.php" method="POST">
                         Item name: 
@@ -85,7 +85,7 @@
                         }
                     ?>
                 </div>
-                <div class="col-md-5"> 
+                <div class="col-sm"> 
                     <h3>Delete item from list</h3>
                     <form action="" method="POST">
                             Item name: 

@@ -122,8 +122,7 @@
                                 }
                             ?>
                             <input type="submit" value="Delete Selected" name="delete">
-                            <input type="submit" value="Edit" name="edit"><br>
-                            <input type="reset" value="Reset"/>
+                            <!-- <input type="submit" value="Edit" name="edit"><br> -->
                             </form>
                         <?php
                         }

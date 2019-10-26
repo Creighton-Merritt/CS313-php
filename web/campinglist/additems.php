@@ -39,7 +39,7 @@
         </div>
         <div class="container-fluid">
             <div class = "row" id="left">
-                <div class="col-sm-4"> 
+                <div class="col-sm-5"> 
                     <h3>Add item to list</h3>
                     <form action="itemadded.php" method="POST">
                         Item name: 
@@ -85,7 +85,7 @@
                         }
                     ?>
                 </div>
-                <div class="col-sm-4" id="right"> 
+                <div class="col-sm-5" id="right"> 
                     <h3>Delete item from list</h3>
                     <?php
                     if(!isset($_REQUEST['submit_btn'])) {

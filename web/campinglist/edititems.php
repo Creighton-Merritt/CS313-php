@@ -78,7 +78,7 @@
             $get_item = $_POST['checked'];
             if(empty($get_item)) {
                 echo("You didn't select any items");
-            } 
+            } else {
             foreach($get_item as $id) {
                 $statement = $db->prepare("SELECT item_name FROM items WHERE item_id = $id;");
                 $statement->execute();
@@ -126,6 +126,7 @@
                     <input type="submit" value="Submit" name="submit"><br>
                 </form>  
                 <?php
+            }
         }
         ?>
         <?php

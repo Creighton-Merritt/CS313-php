@@ -39,7 +39,7 @@
         </div>
         <div class="container-fluid">
             <div class = "row justify-content-between, justify-content-around">
-                <div class="col-md-6"> 
+                <div class="col-md-5"> 
                     <h3>Add item to list</h3>
                     <form action="itemadded.php" method="POST">
                         Item name: 
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class = "row justify-content-between, justify-content-around">
-                <div class="col-md-6"> 
+                <div class="col-md-5"> 
                     <h3>Delete item from list</h3>
                     <form action="" method="POST">
                             Item name: 
@@ -97,24 +97,24 @@
                     <?php
                         if(isset($_REQUEST['submit_btn'])) {
                             $delete_item = $_POST["d_item_name"];
+                            $statement = $db->prepare("SELECT i.item_name, p.first_name, a.activity_name
+                                                    FROM items i inner join person p on i.person_name_id = p.person_id
+                                                    inner join activity a on i.activity_name_id = a.activity_id
+                                                    WHERE i.item_name LIKE '$delete_item%';");
+                            $statement->execute();
+                            $count = 0;
+                            echo '<form action="itemdeleted.php" method="POST">';
+                                while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                                {
+                                    $ditem = $row['i.item_name'];
+                                    $dfirst_name = $row['p.first_name'];
+                                    $dactivity = $row['a.activity_name'];
+                                    echo '<input type="checkbox" name="' . $count . '" value="' . $ditem . '">' . $ditem . ' - ' . $dfirst_name . ' - ' . $dactivity . '<br>'; 
+                                    $count++;
+                                }
+                            echo '<input type="submit" value="submit">';
+                            echo '</form>';
                         }
-                        $statement = $db->prepare("SELECT i.item_name, p.first_name, a.activity_name
-                                                FROM items i inner join person p on i.person_name_id = p.person_id
-                                                inner join activity a on i.activity_name_id = a.activity_id
-                                                WHERE i.item_name LIKE '$delete_item%';");
-                        $statement->execute();
-                        $count = 0;
-                        echo '<form action="itemdeleted.php" method="POST">';
-                            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                            {
-                                $ditem = $row['i.item_name'];
-                                $dfirst_name = $row['p.first_name'];
-                                $dactivity = $row['a.activity_name'];
-                                echo '<input type="checkbox" name="' . $count . '" value="' . $ditem . '">' . $ditem . ' - ' . $dfirst_name . ' - ' . $dactivity . '<br>'; 
-                                $count++;
-                            }
-                        echo '<input type="submit" value="submit">';
-                        echo '</form>';
                     ?>
                 </div>
             </div>

@@ -1,25 +1,21 @@
 <?php
 
-    $itemid = $_POST['checked'];
+    $itemid = htmlspecialchars($_POST['itemid']);
+    $itemname = htmlspecialchars($_POST['itemname']);
+    $name = htmlspecialchars($_POST['Name']);
+    $activity = htmlspecialchars($_POST['Activity']);
+    $location = htmlspecialchars($_POST['Location']);
 
-    if(empty($itemid)) {
-        echo("You didn't select any items");
-        ?>
-            <meta http-equiv="refresh" content="3;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
-        <?php
-    } else if (isset($_POST['delete'])) {
-        require('dbConnect.php');
-        $db = get_db();
-        // foreach ($itemid as $id)
-        // {
-        //     $stmt = $db->prepare("DELETE FROM items WHERE item_id = :id");
-        //     $stmt->bindParam(':id', $id);
-        //     $stmt->execute();
-        // }
+    require('dbConnect.php');
+    $db = get_db();
 
-        // $new_page = "additems.php?deleted=true";
-        // header("Location: $new_page");
-        // exit;   
-    } 
-
+    $statement = $db->prepare("UPDATE items SET item_name = '$itemname',
+                    person_name_id = (SELECT person_id FROM person WHERE first_name = '$name'),
+                    activity_name_id = (SELECT activity_id FROM activity WHERE activity_name = '$activity'),
+                    location_name_id = (SELECT location_id FROM location WHERE item_location = '$location')
+                    WHERE item_id = '$itemid';");
+    $statement->execute();
+    $new_page = "edititems.php?edit=true";
+    header("Location: $new_page");
+    exit;   
 ?>

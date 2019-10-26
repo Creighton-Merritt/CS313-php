@@ -83,12 +83,16 @@
                 $statement = $db->prepare("SELECT item_name FROM items WHERE item_id = $id;");
                 $statement->execute();
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
-                $name = $row['item_name'];
+                $itemname = $row['item_name'];
+                $itemid = $id;
                 ?>
                 <form action="itemedited.php" method="POST">
+                    <br><br>
                     Item name: 
                     <?php
-                    echo"<input type='text' name='newItem' value='$name'required><br>";
+                    echo"<input type='hidden' name'itemid' value='$itemid'>";
+                    echo"<input type='text' name='itemname' value='$itemname'required><br>";
+                  
                 }
                     ?>
                     Assign to person: 
@@ -121,9 +125,17 @@
                         }
                         ?>
                     </select><br>
-                    <input type="submit" value="Submit"><br>
+                    <input type="submit" value="Submit" name="submit"><br>
                 </form>  
                 <?php
+        }
+        ?>
+        <?php
+        if (isset($_GET['edit']) && $_GET['edit'] == 'true') {
+            echo "<strong>Item updated!</strong><br><br>";
+            ?>
+                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/edititems.php"/>
+            <?php
         }
         ?>
     </div>

@@ -99,6 +99,7 @@
                                                     FROM items i inner join person p on i.person_name_id = p.person_id
                                                     inner join activity a on i.activity_name_id = a.activity_id
                                                     WHERE i.item_name LIKE '$delete_item%';");
+                            echo "$delete_item";
                             $statement->execute();
                             $count = 0;
                             echo '<form action="itemdeleted.php" method="POST">';
@@ -111,7 +112,7 @@
                                     echo '<input type="checkbox" name="' . $count . '" value="' . $ditem . '">' . $ditem . ' - ' . $dfirst_name . ' - ' . $dactivity . '<br>'; 
                                     $count++;
                                 }
-                            echo '<input type="submit" value="submit">';
+                            echo '<input type="submit" value="delete" name="Delete selected"';
                             echo '</form>';
                         }
                     ?>

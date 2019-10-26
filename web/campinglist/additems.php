@@ -95,10 +95,10 @@
                     <?php
                         if(isset($_REQUEST['submit_btn'])) {
                             $delete_item = $_POST["d_item_name"];
-                            $statement = $db->prepare("SELECT i.item_name, p.first_name, a.activity_name
-                                                    FROM items i inner join person p on i.person_name_id = p.person_id
-                                                    inner join activity a on i.activity_name_id = a.activity_id
-                                                    WHERE i.item_name LIKE '$delete_item%';");
+                            $statement = $db->prepare("SELECT item_name, first_name, activity_name
+                                                    FROM items inner join person on person_name_id = person_id
+                                                    inner join activity on activity_name_id = activity_id
+                                                    WHERE item_name LIKE '$delete_item%';");
                             echo "$delete_item";
                             $statement->execute();
                             $count = 0;

@@ -84,14 +84,17 @@
                 $statement->execute();
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 $itemname = $row['item_name'];
+                $itemid = $row['item_id'];
                 
                 ?>
                 <form action="itemedited.php" method="POST">
                     <br><br>
-                    Item name: 
+                    Record number: 
                     <?php
-                    $itemid = $row['item_id'];
-                    echo($itemid);
+                    echo"<input type='text' name='itemid' value='$itemid' readonly='readonly'><br>";
+                    ?>
+                    Item name: 
+                    <?php        
                     echo"<input type='text' name='itemname' value='$itemname'required><br>";
                 }
                     ?>

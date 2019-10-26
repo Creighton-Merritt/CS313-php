@@ -38,6 +38,11 @@
                 <hr>
         </div>
         <div class="container-fluid">
+            <?php
+                if (isset($_GET['success']) && $_GET['success'] == 'true') {
+                    echo "Item added!";
+                }
+            ?>
             <form action="itemadded.php" method="post">
                 Item name:<br>
                 <input type="text" name="newItem" required><br>

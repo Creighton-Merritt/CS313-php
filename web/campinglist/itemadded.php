@@ -36,7 +36,7 @@
     // $stmt->bindValue(':location_id', $location_id, PDO::PARAM_INT);
     // $stmt->execute();
 
-    $new_page = "additems.php";
+    $new_page = "additems.php?success=true";
     header("Location: $new_page");
     exit;   
 ?>

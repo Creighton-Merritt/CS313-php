@@ -1,6 +1,7 @@
 <?php
 
     $itemid = $_POST['checked'];
+
     if(empty($itemid)) {
         echo("You didn't select any items");
         ?>

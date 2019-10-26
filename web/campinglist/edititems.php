@@ -76,59 +76,57 @@
         }
         if(isset($_REQUEST['edit'])) {
             $get_item = $_POST['checked'];
-            if(empty($get_item)) {
-                echo("<br>You didn't select any items");
-            } else {
-            foreach($get_item as $id) {
-                $statement = $db->prepare("SELECT item_name, item_id FROM items WHERE item_id = $id;");
-                $statement->execute();
-                $row = $statement->fetch(PDO::FETCH_ASSOC);
-                $itemname = $row['item_name'];
-                $itemid = $row['item_id'];
-                
-                ?>
-                <form action="itemedited.php" method="POST">
-                    <br><br>
-                    Item name: 
-                    <?php        
-                    echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
-                    echo"<input type='text' name='itemname' value='$itemname'required><br>";
-                }
+            if(!empty($get_item)) {
+                foreach($get_item as $id) {
+                    $statement = $db->prepare("SELECT item_name, item_id FROM items WHERE item_id = $id;");
+                    $statement->execute();
+                    $row = $statement->fetch(PDO::FETCH_ASSOC);
+                    $itemname = $row['item_name'];
+                    $itemid = $row['item_id'];
+                    
                     ?>
-                    Assign to person: 
-                    <select name="Name" required>
-                        <option value=""></option>
-                        <?php
-                        while ($row = $pstmt->fetch(PDO::FETCH_ASSOC)){
-                            $name = $row['first_name'];
-                            echo "<option value='$name'>$name</option>";
-                        }
+                    <form action="itemedited.php" method="POST">
+                        <br><br>
+                        Item name: 
+                        <?php        
+                        echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
+                        echo"<input type='text' name='itemname' value='$itemname'required><br>";
+                    }
                         ?>
-                    </select><br>       
-                    Assign to camping location: 
-                    <select name="Activity" required>
-                        <option value=""></option>
-                        <?php
-                        while ($row = $astmt->fetch(PDO::FETCH_ASSOC)) {
-                            $activity = $row['activity_name'];
-                            echo "<option value='$activity'>$activity</option>";
-                        }
-                        ?>
-                    </select><br>
-                    Where is it located in the house?: 
-                    <select name="Location" required>
-                        <option value=""></option>
-                        <?php
-                        while ($row = $lstmt->fetch(PDO::FETCH_ASSOC)) {
-                            $location = $row['item_location'];
-                            echo "<option value='$location'>$location</option>";
-                        }
-                        ?>
-                    </select><br>
-                    <input type="submit" value="Submit" name="submit"><br>
-                </form>  
-                <?php
-            }
+                        Assign to person: 
+                        <select name="Name" required>
+                            <option value=""></option>
+                            <?php
+                            while ($row = $pstmt->fetch(PDO::FETCH_ASSOC)){
+                                $name = $row['first_name'];
+                                echo "<option value='$name'>$name</option>";
+                            }
+                            ?>
+                        </select><br>       
+                        Assign to camping location: 
+                        <select name="Activity" required>
+                            <option value=""></option>
+                            <?php
+                            while ($row = $astmt->fetch(PDO::FETCH_ASSOC)) {
+                                $activity = $row['activity_name'];
+                                echo "<option value='$activity'>$activity</option>";
+                            }
+                            ?>
+                        </select><br>
+                        Where is it located in the house?: 
+                        <select name="Location" required>
+                            <option value=""></option>
+                            <?php
+                            while ($row = $lstmt->fetch(PDO::FETCH_ASSOC)) {
+                                $location = $row['item_location'];
+                                echo "<option value='$location'>$location</option>";
+                            }
+                            ?>
+                        </select><br>
+                        <input type="submit" value="Submit" name="submit"><br>
+                    </form>  
+                    <?php
+                }
         }
         ?>
         <?php

@@ -87,11 +87,17 @@
                 </div>
                 <div class="col-sm"> 
                     <h3>Delete item from list</h3>
-                    <form action="" method="POST">
-                            Item name: 
-                            <input type="text" name="d_item_name" required><br>
-                            <input type="submit" value="submit" name="submit_btn"><br>
-                    <form>
+                    <?php
+                    if(!isset($_REQUEST['submit_btn'])) {
+                        ?>
+                        <form action="" method="POST">
+                                Item name: 
+                                <input type="text" name="d_item_name" required><br>
+                                <input type="submit" value="submit" name="submit_btn"><br>
+                        <form>
+                    <?php
+                    }
+                    ?>
                     <?php
                         if(isset($_REQUEST['submit_btn'])) {
                             $delete_item = $_POST["d_item_name"];

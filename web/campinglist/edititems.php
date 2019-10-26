@@ -91,7 +91,7 @@
                     <br><br>
                     Record number: 
                     <?php
-                    echo"<input type='text' name='hidden' value='$itemid'><br>";
+                    echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
                     ?>
                     Item name: 
                     <?php        

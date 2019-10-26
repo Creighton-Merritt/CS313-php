@@ -87,3 +87,7 @@ head, body {
   .page-content {
     display: table-cell;
   }
+
+  #hidden {
+    display: none;
+  }

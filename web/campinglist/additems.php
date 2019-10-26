@@ -120,7 +120,7 @@
                             }
                         echo '<input type="submit" value="Delete Selected" name="delete"';
                         ?>
-                        </form>;
+                        </form>
                     }
                     ?>
                 </div>

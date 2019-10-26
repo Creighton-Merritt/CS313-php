@@ -82,7 +82,7 @@
                 $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
                                         FROM items inner join person on person_name_id = person_id
                                         inner join activity on activity_name_id = activity_id
-                                        WHERE item_id = $id;");
+                                        WHERE item_id = $get_item;");
                 $statement->execute();
                 foreach ($get_item as $id) {
                     $row = $statement->fetch(PDO::FETCH_ASSOC);

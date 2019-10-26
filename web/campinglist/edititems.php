@@ -54,7 +54,7 @@
                                 $ditem = $row['item_name'];
                                 $dfirst_name = $row['first_name'];
                                 $dactivity = $row['activity_name'];
-                                echo "<input type='radio' name='checked' value='$ditem_id'><label>$ditem - $dfirst_name - $dactivity</label><br>"; 
+                                echo "<input type='radio' name='checked[]' value='$ditem_id'><label>$ditem - $dfirst_name - $dactivity</label><br>"; 
                             }
                         ?>
                         <input type="submit" value="Delete Selected" name="delete">
@@ -62,6 +62,7 @@
                     <?php
                     }
             ?>
+            <?php
                     // //put inside previous if statement?
                     // if(isset($_REQUEST['edit'])) {
                     // $get_item = $_POST['checked'];

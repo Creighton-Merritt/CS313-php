@@ -85,8 +85,6 @@
                         }
                     ?>
                 </div>
-            </div>
-            <div class = "row justify-content-between, justify-content-around">
                 <div class="col-md-5"> 
                     <h3>Delete item from list</h3>
                     <form action="" method="POST">

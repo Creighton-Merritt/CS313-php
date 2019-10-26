@@ -107,7 +107,9 @@
                                                 WHERE item_name LIKE '$delete_item%';");
                         $statement->execute();
                         $count = 0;
-                        echo '<form action="itemdeleted.php" method="POST">';
+                        ?>
+                        <form action="itemdeleted.php" method="POST">
+                        <?php
                             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                             {
                                 $ditem = $row['item_name'];
@@ -117,7 +119,8 @@
                                 $count++;
                             }
                         echo '<input type="submit" value="Delete Selected" name="delete"';
-                        echo '</form>';
+                        ?>
+                        </form>;
                     }
                     ?>
                 </div>

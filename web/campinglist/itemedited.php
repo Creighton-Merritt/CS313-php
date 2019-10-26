@@ -1,7 +1,7 @@
 <?php
 
-    $itemid = $_POST['itemid'];
     $itemname = htmlspecialchars($_POST['itemname']);
+    $itemid = $_POST['itemid'];
     $name = htmlspecialchars($_POST['Name']);
     $activity = htmlspecialchars($_POST['Activity']);
     $location = htmlspecialchars($_POST['Location']);

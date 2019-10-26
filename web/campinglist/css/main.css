@@ -84,6 +84,6 @@ head, body {
     width: 45%;
   }
   #right {
-    position: absolute;
+    position: right;
     width:45%;
   }

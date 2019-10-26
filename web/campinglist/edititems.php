@@ -79,11 +79,13 @@
                 if(empty($get_item)) {
                     echo("You didn't select any items");
                 } else {
-                    $statement = $db->prepare("SELECT item_name FROM items WHERE item_id = $get_item;");
-                    $statement->execute();
-                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                        $item = $row['item_name'];
-                        echo ($item);
+                    foreach ($get_item as $id) {
+                        $statement = $db->prepare("SELECT item_name FROM items WHERE item_id = $id;");
+                        $statement->execute();
+                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                            $item = $row['item_name'];
+                            echo ($item);
+                        }
                     }
                 }
             }

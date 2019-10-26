@@ -79,26 +79,26 @@
             if(empty($get_item)) {
                 echo("You didn't select any items");
             } 
-                
-            $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
-                                    FROM items inner join person on person_name_id = person_id
-                                    inner join activity on activity_name_id = activity_id
-                                    WHERE item_id = $get_item;");
-            $statement->execute();
-            $row = $statement->fetch(PDO::FETCH_ASSOC);
-            $name = $row['item_name'];
-            $item = $row['item_id'];
-            $person = $row['person_name_id'];
-            $activity = $row['activity_name_id'];
-            echo "<h5>Current name: $name</h5><br>";
-            echo "<h5>Current owner: $person</h5><br>";
-            echo "<h5>Current activity: $activity</h5><br>";
-            ?>
-            <form action="itemedited.php" method="POST">
-            Item name: 
-            <?php
-            echo"<input type='text' name='newItem' value='$name'required><br>";
-    
+            foreach($get_item as $id) {
+                $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
+                                        FROM items inner join person on person_name_id = person_id
+                                        inner join activity on activity_name_id = activity_id
+                                        WHERE item_id = $id;");
+                $statement->execute();
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                $name = $row['item_name'];
+                $item = $row['item_id'];
+                $person = $row['person_name_id'];
+                $activity = $row['activity_name_id'];
+                echo "<h5>Current name: $name</h5><br>";
+                echo "<h5>Current owner: $person</h5><br>";
+                echo "<h5>Current activity: $activity</h5><br>";
+                ?>
+                <form action="itemedited.php" method="POST">
+                Item name: 
+                <?php
+                echo"<input type='text' name='newItem' value='$name'required><br>";
+            }
             ?>
                 Assign to person: 
                 <select name="Name" required>

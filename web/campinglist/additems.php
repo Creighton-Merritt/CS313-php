@@ -118,9 +118,10 @@
                                 echo "<input type='checkbox' name='$count' value='$ditem'>$ditem - $dfirst_name - $dactivity<br>"; 
                                 $count++;
                             }
-                        echo '<input type="submit" value="Delete Selected" name="delete"';
                         ?>
+                        <input type="submit" value="Delete Selected" name="delete">
                         </form>
+                    <?php
                     }
                     ?>
                 </div>

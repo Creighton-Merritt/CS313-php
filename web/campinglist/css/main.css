@@ -80,10 +80,11 @@ head, body {
   }
 
   #left {
+    margin-left:10%;
     position: left;
-    width: 45%;
+    width: 50%;
   }
   #right {
     position: right;
-    width:45%;
+    width:50%;
   }

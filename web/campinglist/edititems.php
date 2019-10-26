@@ -76,7 +76,7 @@
         }
         if(isset($_REQUEST['edit'])) {
             $get_item = $_POST['checked'];
-            if(empty($get_item)) {
+            if(empty($get_item) && !isset($_GET['edit'])) {
                 ?>
                 <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/edititems.php"/>
                 <?php

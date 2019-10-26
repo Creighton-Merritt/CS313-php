@@ -74,7 +74,7 @@
                             }
                             ?>
                         </select><br>
-                        <input type="submit" value="submit"><br>
+                        <input type="submit" value="Submit"><br>
                     </form>  
                     <?php
                         if (isset($_GET['success']) && $_GET['success'] == 'true') {
@@ -105,7 +105,6 @@
                                                 FROM items inner join person on person_name_id = person_id
                                                 inner join activity on activity_name_id = activity_id
                                                 WHERE item_name LIKE '$delete_item%';");
-                        echo "$delete_item";
                         $statement->execute();
                         $count = 0;
                         echo '<form action="itemdeleted.php" method="POST">';
@@ -117,7 +116,7 @@
                                 echo "<input type='checkbox' name='$count' value='$ditem'>$ditem - $dfirst_name - $dactivity<br>"; 
                                 $count++;
                             }
-                        echo '<input type="submit" value="delete" name="Delete selected"';
+                        echo '<input type="submit" value="Delete Selected" name="delete"';
                         echo '</form>';
                     }
                     ?>

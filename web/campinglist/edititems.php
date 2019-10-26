@@ -92,8 +92,6 @@
                     <?php
                     echo"<input type='text' id='hidden' name'itemid' value='$itemid'>";
                     echo"<input type='text' name='itemname' value='$itemname'required><br>";
-
-                  
                 }
                     ?>
                     Assign to person: 

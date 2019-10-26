@@ -28,7 +28,7 @@
 </head>
 <body>
     <div class="container-fluid">
-            <a id="home" href="../home.php">&#9668; Home </a>
+            <a id="Back" href="../main.html">&#9668; Home </a>
             <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
             <br>
     </div>
@@ -66,7 +66,7 @@
                     $item = $row['item_name'];
                     $first_name = $row['first_name'];
                     $activity = $row['activity_name'];
-                    echo "<input type='radio' name='checked[$count]' value='$item_id'><label>$item - $first_name - $activity</label><br>"; 
+                    echo "<input type='radio' name='checked[]' value='$item_id'><label>$item - $first_name - $activity</label><br>"; 
                     $count++;
                 }
             ?>
@@ -76,8 +76,16 @@
         }
             if(isset($_REQUEST['edit'])) {
                 $get_item = $_POST['checked'];
-                echo ($get_item);
-                // $statement = db->prepare
+                if(empty($get_item)) {
+                    echo("You didn't select any items");
+                } else {
+                    $statement = $db->prepare("SELECT item_name FROM items WHERE item_id = $id;");
+                    $statement->execute();
+                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                        $item = $row['item_name'];
+                        echo ($item);
+                    }
+                }
             }
         ?>
     </div>

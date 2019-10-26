@@ -25,7 +25,7 @@
 
 
     <div class="container-fluid">
-        <h1>Add to Database</h1>
+        <h1>Manage Database</h1>
     </div>
 </head>
     <body>
@@ -38,49 +38,82 @@
                 <hr>
         </div>
         <div class="container-fluid">
-            <form action="itemadded.php" method="post">
-                Item name: 
-                <input type="text" name="newItem" required><br>
-                Assign to person: 
-                <select name="Name" required>
-                    <option value=""></option>
-                    <?php
-                    while ($row = $pstmt->fetch(PDO::FETCH_ASSOC)){
-                        $name = $row['first_name'];
-                        echo "<option value='$name'>$name</option>";
+            <div class = "row justify-content-between, justify-content-around">
+                <h3>Add item to list</h3>
+                <form action="itemadded.php" method="POST">
+                    Item name: 
+                    <input type="text" name="newItem" required><br>
+                    Assign to person: 
+                    <select name="Name" required>
+                        <option value=""></option>
+                        <?php
+                        while ($row = $pstmt->fetch(PDO::FETCH_ASSOC)){
+                            $name = $row['first_name'];
+                            echo "<option value='$name'>$name</option>";
+                        }
+                        ?>
+                    </select><br>       
+                    Assign to camping location: 
+                    <select name="Activity" required>
+                        <option value=""></option>
+                        <?php
+                        while ($row = $astmt->fetch(PDO::FETCH_ASSOC)) {
+                            $activity = $row['activity_name'];
+                            echo "<option value='$activity'>$activity</option>";
+                        }
+                        ?>
+                    </select><br>
+                    Where is it located in the house?: 
+                    <select name="Location" required>
+                        <option value=""></option>
+                        <?php
+                        while ($row = $lstmt->fetch(PDO::FETCH_ASSOC)) {
+                            $location = $row['item_location'];
+                            echo "<option value='$location'>$location</option>";
+                        }
+                        ?>
+                    </select><br>
+                    <input type="submit" value="submit"><br>
+                </form>  
+                <?php
+                    if (isset($_GET['success']) && $_GET['success'] == 'true') {
+                        echo "<strong>Item added!<strong><br><br>";
+                        ?>
+                            <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
+                        <?php
                     }
-                    ?>
-                </select><br>       
-                Assign to camping location: 
-                <select name="Activity" required>
-                    <option value=""></option>
-                    <?php
-                    while ($row = $astmt->fetch(PDO::FETCH_ASSOC)) {
-                        $activity = $row['activity_name'];
-                        echo "<option value='$activity'>$activity</option>";
+                ?>
+            </div>
+            <div class = "row justify-content-between, justify-content-around">
+                <h3>Delete item from list</h3>
+                <form action="" method="POST">
+                        Item name: 
+                        <input type="text" name="d_item_name" required><br>
+                        <input type="submit" value="submit" name="submit_btn"><br>
+                <form>
+                <?php
+                    if(isset($_REQUEST['submit_btn'])) {
+                        $delete_item = $_POST["d_item_name"];
                     }
-                    ?>
-                </select><br>
-                Where is it located in the house?: 
-                <select name="Location" required>
-                    <option value=""></option>
-                    <?php
-                    while ($row = $lstmt->fetch(PDO::FETCH_ASSOC)) {
-                        $location = $row['item_location'];
-                        echo "<option value='$location'>$location</option>";
-                    }
-                    ?>
-                </select><br>
-                <input type="submit" value="submit"><br>
-            </form>  
-            <?php
-                if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                    echo "<strong>Item added!<strong><br><br>";
-                    ?>
-                        <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
-                    <?php
-                }
-            ?>
+                    $statement = $db->prepare("SELECT i.item_name, p.first_name, a.activity_name
+                                            FROM items i inner join person p on i.person_name_id = p.person_id
+                                            inner join activity a on i.activity_name_id = a.activity_id
+                                            WHERE i.item_name LIKE '$delete_item%';");
+                    $statement->execute();
+                    $count = 0;
+                    echo '<form action="itemdeleted.php" method="POST">';
+                        while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                        {
+                            $ditem = $row['i.item_name'];
+                            $dfirst_name = $row['p.first_name'];
+                            $dactivity = $row['a.activity_name'];
+                            echo '<input type="checkbox" name="' . $count . '" value="' . $ditem . '">' . $ditem . ' - ' . $dfirst_name . ' - ' . $dactivity . '<br>'; 
+                            $count++;
+                        }
+                    echo '<input type="submit" value="submit">';
+                    echo '</form>';
+                ?>
+            </div>
         </div>
     </body>
 </html>

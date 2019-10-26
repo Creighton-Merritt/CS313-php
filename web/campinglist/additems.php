@@ -107,6 +107,7 @@
                                     $ditem = $row['i.item_name'];
                                     $dfirst_name = $row['p.first_name'];
                                     $dactivity = $row['a.activity_name'];
+                                    echo "$ditem, $dfirst_name, $dactivity";
                                     echo '<input type="checkbox" name="' . $count . '" value="' . $ditem . '">' . $ditem . ' - ' . $dfirst_name . ' - ' . $dactivity . '<br>'; 
                                     $count++;
                                 }

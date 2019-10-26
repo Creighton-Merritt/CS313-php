@@ -123,6 +123,14 @@
                     <?php
                     }
                     ?>
+                    <?php
+                        if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
+                            echo "<strong>Item deleted!<strong><br><br>";
+                            ?>
+                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

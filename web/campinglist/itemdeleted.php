@@ -14,7 +14,7 @@
             $stmt->execute();
         }
 
-        $new_page = "additems.php";
+        $new_page = "additems.php?deleted=true";
         header("Location: $new_page");
         exit;   
     }

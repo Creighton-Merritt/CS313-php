@@ -2,7 +2,9 @@
 
     $itemid = $_POST['checked'];
     if(empty($itemid)) {
-        echo("You didn't select any items"); ?>
+        echo("You didn't select any items");
+        exit();
+        ?>
             <meta http-equiv="refresh" content="5;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
         <?php
     } else {

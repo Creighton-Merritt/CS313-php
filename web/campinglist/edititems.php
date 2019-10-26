@@ -80,16 +80,17 @@
                 echo("You didn't select any items");
             } else {
             foreach($get_item as $id) {
-                $statement = $db->prepare("SELECT item_name FROM items WHERE item_id = $id;");
+                $statement = $db->prepare("SELECT item_name, item_id FROM items WHERE item_id = $id;");
                 $statement->execute();
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 $itemname = $row['item_name'];
+                $itemid = $row['item_id'];
                 ?>
                 <form action="itemedited.php" method="POST">
                     <br><br>
                     Item name: 
                     <?php
-                    echo"<input type='text' name'id' value='$id' id='hidden'>";
+                    echo"<input type='text' name'itemid' value='$itemid' id='hidden'>";
                     echo"<input type='text' name='itemname' value='$itemname'required><br>";
                 }
                     ?>

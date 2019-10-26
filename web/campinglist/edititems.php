@@ -27,40 +27,41 @@
         <div class="col-md-auto">
             <h2>Item lookup</h2>
                 <?php
-                if(!isset($_REQUEST['submit_btn'])) {
-                    ?>
-                    <form action="" method="POST">
-                            Item name: 
-                            <input type="text" name="s_item_name" required><br>
-                            <input type="submit" value="Search" name="submit_btn"><br>
-                    </form>
-                <?php
-                }
-                ?>
-                <?php
-                if(isset($_REQUEST['submit_btn'])) {
-                    $select_item = $_POST["s_item_name"];
-                    $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
-                                            FROM items inner join person on person_name_id = person_id
-                                            inner join activity on activity_name_id = activity_id
-                                            WHERE item_name LIKE '%$select_item%';");
-                    $statement->execute();
-                    ?>
-                    <form action="" method="POST">
+                    if(!isset($_REQUEST['submit_btn'])) {
+                        ?>
+                        <form action="" method="POST">
+                                Item name: 
+                                <input type="text" name="d_item_name" required><br>
+                                <input type="submit" value="Search" name="submit_btn"><br>
+                        </form>
                     <?php
-                        while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                        {
-                            $item_id = $row['item_id'];
-                            $item = $row['item_name'];
-                            $first_name = $row['first_name'];
-                            $activity = $row['activity_name'];
-                            echo "<input type='radio' name='checked' value='$item_id'><label>$item - $first_name - $activity</label><br>"; 
-                        }
+                    }
                     ?>
-                    <input type="submit" value="Edit item details" name="edit">
-                    </form>
-                <?php
-                }
+                    <?php
+                    if(isset($_REQUEST['submit_btn'])) {
+                        $delete_item = $_POST["d_item_name"];
+                        $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
+                                                FROM items inner join person on person_name_id = person_id
+                                                inner join activity on activity_name_id = activity_id
+                                                WHERE item_name LIKE '%$delete_item%';");
+                        $statement->execute();
+                        ?>
+                        <form action="itemdeleted.php" method="POST">
+                        <?php
+                            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                            {
+                                $ditem_id = $row['item_id'];
+                                $ditem = $row['item_name'];
+                                $dfirst_name = $row['first_name'];
+                                $dactivity = $row['activity_name'];
+                                echo "<input type='radio' name='checked' value='$ditem_id'><label>$ditem - $dfirst_name - $dactivity</label><br>"; 
+                            }
+                        ?>
+                        <input type="submit" value="Delete Selected" name="delete">
+                        </form>
+                    <?php
+                    }
+            ?>
                     // //put inside previous if statement?
                     // if(isset($_REQUEST['edit'])) {
                     // $get_item = $_POST['checked'];

@@ -78,15 +78,3 @@ head, body {
   .roomHeader {
     margin-top: 15px;
   }
-
-  input, textarea, .message {
-    display:block;
-    width:580px;
-    margin:0 0 20px;
-    padding:5px 10px;
-    }
-
-  .message {
-    background:#cef6ce;
-    color:#088a08;
-  }

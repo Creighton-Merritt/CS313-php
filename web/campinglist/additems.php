@@ -78,7 +78,7 @@
                     </form>  
                     <?php
                         if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                            echo '<p id="success" width="10"><strong>Item added!<strong></p><br><br>';
+                            echo '<span width="15"><strong>Item added!<strong></span>';
                             ?>
                                 <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
                             <?php

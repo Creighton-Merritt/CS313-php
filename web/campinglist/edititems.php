@@ -59,13 +59,15 @@
             ?>
             <form action="" method="POST">
             <?php
+                $count = 0;
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $item_id = $row['item_id'];
                     $item = $row['item_name'];
                     $first_name = $row['first_name'];
                     $activity = $row['activity_name'];
-                    echo "<input type='radio' name='checked[]' value='$item_id'><label>$item - $first_name - $activity</label><br>"; 
+                    echo "<input type='radio' name='checked[$count]' value='$item_id'><label>$item - $first_name - $activity</label><br>"; 
+                    $count++;
                 }
             ?>
             <input type="submit" value="Edit item details" name="edit">

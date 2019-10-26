@@ -76,8 +76,9 @@
             <?php
                 if (isset($_GET['success']) && $_GET['success'] == 'true') {
                     echo "<strong>Item added!<strong><br><br>";
-                    $new_page = "additems.php";
-                    header("Location: $new_page");
+                    ?>
+                        <meta http-equiv="refresh" content="10;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>;
+                    <?php
                 }
             ?>
         </div>

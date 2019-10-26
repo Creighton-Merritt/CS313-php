@@ -80,12 +80,8 @@ head, body {
   }
 
   #left {
-    margin-left:10%;
     position: left;
-    width: 50%;
   }
   #right {
-    margin-left: 15%;
     position: right;
-    width:50%;
   }

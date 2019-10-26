@@ -1,6 +1,6 @@
 <?php
 
-    $itemid = htmlspecialchars($_POST['itemid']);
+    $itemid = $_POST['itemid'];
     $itemname = htmlspecialchars($_POST['itemname']);
     $name = htmlspecialchars($_POST['Name']);
     $activity = htmlspecialchars($_POST['Activity']);

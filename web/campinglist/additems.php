@@ -40,7 +40,7 @@
         <div class = "page">
             <div class = "page-content">
                 <div class ="row">
-                    <div class="col-md-5"> 
+                    <div class="col-md-4"> 
                         <h3>Add item to list</h3>
                         <form action="itemadded.php" method="POST">
                             Item name: 
@@ -86,7 +86,7 @@
                             }
                         ?>
                     </div>
-                    <div class="col-md-5"> 
+                    <div class="col-md-4"> 
                         <h3>Delete item from list</h3>
                         <?php
                         if(!isset($_REQUEST['submit_btn'])) {

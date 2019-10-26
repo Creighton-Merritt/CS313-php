@@ -78,7 +78,7 @@
                     </form>  
                     <?php
                         if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                            echo "<strong>Item added!<strong><br><br>";
+                            echo '<p id="success" width="10"><strong>Item added!<strong></p><br><br>';
                             ?>
                                 <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
                             <?php
@@ -93,7 +93,7 @@
                         <form action="" method="POST">
                                 Item name: 
                                 <input type="text" name="d_item_name" required><br>
-                                <input type="submit" value="submit" name="submit_btn"><br>
+                                <input type="submit" value="Search" name="submit_btn"><br>
                         </form>
                     <?php
                     }
@@ -104,7 +104,7 @@
                         $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
                                                 FROM items inner join person on person_name_id = person_id
                                                 inner join activity on activity_name_id = activity_id
-                                                WHERE lower(item_name) LIKE '%$delete_item%';");
+                                                WHERE item_name LIKE '%$delete_item%';");
                         $statement->execute();
                         ?>
                         <form action="itemdeleted.php" method="POST">

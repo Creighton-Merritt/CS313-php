@@ -76,11 +76,12 @@
         }
         if(isset($_REQUEST['edit'])) {
             $get_item = $_POST['checked'];
-            if(empty($get_item) && isset($_GET['edit']) != true) {
+            if(empty($get_item)) {
                 ?>
                 <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/edititems.php"/>
                 <?php
-            } else {
+            } 
+            if (!empty($get_item)) {
                 foreach($get_item as $id) {
                     $statement = $db->prepare("SELECT item_name, item_id FROM items WHERE item_id = $id;");
                     $statement->execute();

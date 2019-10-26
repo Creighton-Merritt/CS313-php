@@ -25,4 +25,9 @@
 
             return $db;
         }
+
+        function successMessage(){
+            $message = "Item added!";
+            return "<div class='message'>$message</div>";
+        }
     ?> 

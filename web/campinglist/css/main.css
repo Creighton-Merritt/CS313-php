@@ -89,5 +89,5 @@ head, body {
   }
 
   #hidden {
-    visibility: none;
+    visibility: hidden;
   }

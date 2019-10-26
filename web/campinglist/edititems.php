@@ -77,7 +77,7 @@
         if(isset($_REQUEST['edit'])) {
             $get_item = $_POST['checked'];
             if(empty($get_item)) {
-                echo("You didn't select any items");
+                echo("<br>You didn't select any items");
             } else {
             foreach($get_item as $id) {
                 $statement = $db->prepare("SELECT item_name, item_id FROM items WHERE item_id = $id;");
@@ -89,12 +89,9 @@
                 ?>
                 <form action="itemedited.php" method="POST">
                     <br><br>
-                    Record number: 
-                    <?php
-                    echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
-                    ?>
                     Item name: 
                     <?php        
+                    echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
                     echo"<input type='text' name='itemname' value='$itemname'required><br>";
                 }
                     ?>

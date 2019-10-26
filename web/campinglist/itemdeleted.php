@@ -5,7 +5,7 @@
     if(empty($itemid)) {
         echo("You didn't select any items");
         ?>
-            <meta http-equiv="refresh" content="3;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
+            <meta http-equiv="refresh" content="3;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/deleteitems.php"/>
         <?php
     } else if (isset($_POST['delete'])) {
         require('dbConnect.php');
@@ -17,7 +17,7 @@
             $stmt->execute();
         }
 
-        $new_page = "additems.php?deleted=true";
+        $new_page = "deleteitems.php?deleted=true";
         header("Location: $new_page");
         exit;   
     } 

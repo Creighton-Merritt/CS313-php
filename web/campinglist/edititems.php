@@ -85,6 +85,7 @@
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 $itemname = $row['item_name'];
                 $itemid = $row['item_id'];
+                echo($itemid);
                 ?>
                 <form action="itemedited.php" method="POST">
                     <br><br>

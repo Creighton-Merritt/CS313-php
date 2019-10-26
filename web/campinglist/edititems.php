@@ -75,7 +75,7 @@
         <?php
         }
             if(isset($_REQUEST['edit'])) {
-                $get_item = $_POST['value'];
+                $get_item = $_POST['checked'];
                 echo ($get_item);
                 // $statement = db->prepare
             }

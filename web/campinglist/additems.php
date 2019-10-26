@@ -105,11 +105,11 @@
                             echo '<form action="itemdeleted.php" method="POST">';
                                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                                 {
-                                    $ditem = $row['i.item_name'];
-                                    $dfirst_name = $row['p.first_name'];
-                                    $dactivity = $row['a.activity_name'];
+                                    $ditem = $row['item_name'];
+                                    $dfirst_name = $row['first_name'];
+                                    $dactivity = $row['activity_name'];
                                     echo "$ditem, $dfirst_name, $dactivity";
-                                    echo '<input type="checkbox" name="' . $count . '" value="' . $ditem . '">' . $ditem . ' - ' . $dfirst_name . ' - ' . $dactivity . '<br>'; 
+                                    echo "<input type='checkbox' name='$count' value='$ditem'>$ditem - $dfirst_name - $dactivity<br>"; 
                                     $count++;
                                 }
                             echo '<input type="submit" value="delete" name="Delete selected"';

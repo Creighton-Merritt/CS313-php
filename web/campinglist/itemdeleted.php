@@ -2,8 +2,9 @@
 
     $itemid = $_POST['checked'];
     if(empty($itemid)) {
-        echo("You didn't select any items");
-        exit();
+        echo("You didn't select any items"); ?>
+            <meta http-equiv="refresh" content="5;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
+        <?php
     } else {
         require('dbConnect.php');
         $db = get_db();

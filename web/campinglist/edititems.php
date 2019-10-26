@@ -79,12 +79,13 @@
             if(empty($get_item)) {
                 echo("You didn't select any items");
             } else {
-                $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
-                                        FROM items inner join person on person_name_id = person_id
-                                        inner join activity on activity_name_id = activity_id
-                                        WHERE item_id = $get_item;");
-                $statement->execute();
                 foreach ($get_item as $id) {
+                    $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
+                                            FROM items inner join person on person_name_id = person_id
+                                            inner join activity on activity_name_id = activity_id
+                                            WHERE item_id = $$id;");
+                    $statement->execute();
+                
                     $row = $statement->fetch(PDO::FETCH_ASSOC);
                     $name = $row['item_name'];
                     $item = $row['item_id'];

@@ -39,9 +39,9 @@
         </div>
         <div class="container-fluid">
             <form action="itemadded.php" method="post">
-                Item name:<br>
+                Item name: 
                 <input type="text" name="newItem" required><br>
-                Assign to person:
+                Assign to person: 
                 <select name="Name" required>
                     <option value=""></option>
                     <?php
@@ -51,7 +51,7 @@
                     }
                     ?>
                 </select><br>       
-                Assign to camping location:
+                Assign to camping location: 
                 <select name="Activity" required>
                     <option value=""></option>
                     <?php
@@ -61,7 +61,7 @@
                     }
                     ?>
                 </select><br>
-                Where is it located in the house?:
+                Where is it located in the house?: 
                 <select name="Location" required>
                     <option value=""></option>
                     <?php

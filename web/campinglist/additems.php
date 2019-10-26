@@ -38,7 +38,7 @@
                 <hr>
         </div>
         <div class="container-fluid">
-            <div class = "row">
+            <div class = "row" id="left">
                 <div class="col-sm"> 
                     <h3>Add item to list</h3>
                     <form action="itemadded.php" method="POST">
@@ -85,54 +85,52 @@
                         }
                     ?>
                 </div>
-                <div class="col-sm"> 
-                    <div class="position-fixed">
-                        <h3>Delete item from list</h3>
-                        <?php
-                        if(!isset($_REQUEST['submit_btn'])) {
-                            ?>
-                            <form action="" method="POST">
-                                    Item name: 
-                                    <input type="text" name="d_item_name" required><br>
-                                    <input type="submit" value="Search" name="submit_btn"><br>
-                            </form>
-                        <?php
-                        }
+                <div class="col-sm" id="right"> 
+                    <h3>Delete item from list</h3>
+                    <?php
+                    if(!isset($_REQUEST['submit_btn'])) {
                         ?>
-                        <?php
-                        if(isset($_REQUEST['submit_btn'])) {
-                            $delete_item = $_POST["d_item_name"];
-                            $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
-                                                    FROM items inner join person on person_name_id = person_id
-                                                    inner join activity on activity_name_id = activity_id
-                                                    WHERE item_name LIKE '%$delete_item%';");
-                            $statement->execute();
-                            ?>
-                            <form action="itemdeleted.php" method="POST">
-                            <?php
-                                while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                                {
-                                    $ditem_id = $row['item_id'];
-                                    $ditem = $row['item_name'];
-                                    $dfirst_name = $row['first_name'];
-                                    $dactivity = $row['activity_name'];
-                                    echo "<input type='checkbox' name='checked[]' value='$ditem_id'><label>$ditem - $dfirst_name - $dactivity</label><br>"; 
-                                }
-                            ?>
-                            <input type="submit" value="Delete Selected" name="delete">
-                            </form>
-                        <?php
-                        }
+                        <form action="" method="POST">
+                                Item name: 
+                                <input type="text" name="d_item_name" required><br>
+                                <input type="submit" value="Search" name="submit_btn"><br>
+                        </form>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_REQUEST['submit_btn'])) {
+                        $delete_item = $_POST["d_item_name"];
+                        $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
+                                                FROM items inner join person on person_name_id = person_id
+                                                inner join activity on activity_name_id = activity_id
+                                                WHERE item_name LIKE '%$delete_item%';");
+                        $statement->execute();
                         ?>
+                        <form action="itemdeleted.php" method="POST">
                         <?php
-                            if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
-                                echo "<strong>Item deleted!<strong><br><br>";
-                                ?>
-                                    <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
-                                <?php
+                            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                            {
+                                $ditem_id = $row['item_id'];
+                                $ditem = $row['item_name'];
+                                $dfirst_name = $row['first_name'];
+                                $dactivity = $row['activity_name'];
+                                echo "<input type='checkbox' name='checked[]' value='$ditem_id'><label>$ditem - $dfirst_name - $dactivity</label><br>"; 
                             }
                         ?>
-                    </div>
+                        <input type="submit" value="Delete Selected" name="delete">
+                        </form>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                        if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
+                            echo "<strong>Item deleted!<strong><br><br>";
+                            ?>
+                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

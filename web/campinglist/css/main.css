@@ -78,3 +78,12 @@ head, body {
   .roomHeader {
     margin-top: 15px;
   }
+
+  #left {
+    position: left;
+    width: 45%;
+  }
+  #right {
+    position: absolute;
+    width:45%;
+  }

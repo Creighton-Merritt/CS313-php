@@ -94,7 +94,7 @@
                                 Item name: 
                                 <input type="text" name="d_item_name" required><br>
                                 <input type="submit" value="submit" name="submit_btn"><br>
-                        <form>
+                        </form>
                     <?php
                     }
                     ?>

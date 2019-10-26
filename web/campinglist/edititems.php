@@ -99,7 +99,7 @@
             <?php
             echo"<input type='text' name='newItem' value='$name'required><br>";
     
-        ?>
+            ?>
                 Assign to person: 
                 <select name="Name" required>
                     <option value=""></option>
@@ -133,7 +133,6 @@
                 <input type="submit" value="Submit"><br>
                 </form>  
                 <?php
-            }
         }
         ?>
     </div>

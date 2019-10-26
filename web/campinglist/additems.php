@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <?php
                 if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                    echo "Item added!";
+                    echo "<strong>Item added!<strong><br><br>";
                 }
             ?>
             <form action="itemadded.php" method="post">

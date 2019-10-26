@@ -28,7 +28,7 @@
 </head>
 <body>
     <div class="container-fluid">
-            <a id="Back" href="../main.html">&#9668; Home </a>
+            <a id="home" href="../main.html">&#9668; Back </a>
             <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
             <br>
     </div>

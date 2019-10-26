@@ -79,7 +79,9 @@
                         </form>  
                         <?php
                             if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                                echo '<span width="15"><strong>Item added!<strong></span>';
+                                echo '<div class="container-fluid">
+                                    <p><strong>Item added!</strong></p>
+                                     </div>';
                                 ?>
                                     <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
                                 <?php
@@ -126,7 +128,7 @@
                         ?>
                         <?php
                             if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
-                                echo "<strong>Item deleted!<strong><br><br>";
+                                echo "<strong>Item deleted!</strong><br><br>";
                                 ?>
                                     <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
                                 <?php

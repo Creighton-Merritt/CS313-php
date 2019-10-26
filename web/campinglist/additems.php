@@ -101,22 +101,21 @@
                     <?php
                     if(isset($_REQUEST['submit_btn'])) {
                         $delete_item = $_POST["d_item_name"];
-                        $statement = $db->prepare("SELECT item_name, first_name, activity_name
+                        $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
                                                 FROM items inner join person on person_name_id = person_id
                                                 inner join activity on activity_name_id = activity_id
                                                 WHERE item_name LIKE '$delete_item%';");
                         $statement->execute();
-                        $count = 0;
                         ?>
                         <form action="itemdeleted.php" method="POST">
                         <?php
                             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                             {
+                                $ditem_id = $row['item_id'];
                                 $ditem = $row['item_name'];
                                 $dfirst_name = $row['first_name'];
                                 $dactivity = $row['activity_name'];
-                                echo "<input type='checkbox' name='$count' value='$ditem'>$ditem - $dfirst_name - $dactivity<br>"; 
-                                $count++;
+                                echo "<input type='checkbox' name='checked[]' value='$ditem_id'><label>$ditem - $dfirst_name - $dactivity</label><br>"; 
                             }
                         ?>
                         <input type="submit" value="Delete Selected" name="delete">

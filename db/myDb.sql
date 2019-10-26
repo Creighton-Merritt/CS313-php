@@ -62,4 +62,11 @@ ORDER BY items.location_name_id;
 INSERT INTO items (item_name, person_name_id, activity_name_id, location_name_id) 
 VALUES 
     ('Hydration packs', 5, 3, 2);
+	
+	
+SELECT item_name, first_name, activity_name
+FROM items inner join person on person_name_id = person_id
+inner join activity on activity_name_id = activity_id
+WHERE item_name LIKE 'Test%';
+
 

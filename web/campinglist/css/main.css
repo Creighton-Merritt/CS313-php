@@ -86,4 +86,6 @@ head, body {
 
   .page-content {
     display: table-cell;
+    position: fixed;
+    size: fixed;
   }

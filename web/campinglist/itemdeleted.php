@@ -19,6 +19,10 @@
         $new_page = "additems.php?deleted=true";
         header("Location: $new_page");
         exit;   
+    } else if (isset($_POST['edit'])) {
+        echo("You clicked edit");
+
+
     }
 
 ?>

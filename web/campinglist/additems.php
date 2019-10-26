@@ -42,7 +42,7 @@
                 Item name:<br>
                 <input type="text" name="newItem"><br>
                 Assign to person:
-                <select name="Name">
+                <select name="Name" required>
                     <option hidden disabled selected value></option>
                     <?php
                     while ($row = $pstmt->fetch(PDO::FETCH_ASSOC)){
@@ -52,8 +52,8 @@
                     ?>
                 </select><br>       
                 Assign to camping location:
-                <select name="Activity">
-                    <option hidden disabled selected value></option>
+                <select name="Activity" required>
+                    <option hidden disabled selected value required></option>
                     <?php
                     while ($row = $astmt->fetch(PDO::FETCH_ASSOC)) {
                         $activity = $row['activity_name'];
@@ -62,7 +62,7 @@
                     ?>
                 </select><br>
                 Where is it located in the house?:
-                <select name="Location">
+                <select name="Location" required>
                     <option hidden disabled selected value></option>
                     <?php
                     while ($row = $lstmt->fetch(PDO::FETCH_ASSOC)) {

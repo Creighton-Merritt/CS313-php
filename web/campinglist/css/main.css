@@ -79,9 +79,11 @@ head, body {
     margin-top: 15px;
   }
 
-  #left {
-    position: left;
+  .page {
+    display: table;
+    width: 100%;
   }
-  #right {
-    position: right;
+
+  .page-content {
+    display: table-cell;
   }

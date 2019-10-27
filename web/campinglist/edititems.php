@@ -98,7 +98,7 @@
                         echo"<input type='text' name='itemname' value='$itemname'required><br>";
                     }
                         ?>
-                        Assign to person: 
+                        Who will use it?: 
                         <select name="Name" required>
                             <option value=""></option>
                             <?php
@@ -108,7 +108,7 @@
                             }
                             ?>
                         </select><br>       
-                        Assign to camping location: 
+                        Camping location: 
                         <select name="Activity" required>
                             <option value=""></option>
                             <?php

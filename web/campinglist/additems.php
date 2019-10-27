@@ -43,7 +43,7 @@
                     <form action="itemadded.php" method="POST">
                         Item name: 
                         <input type="text" name="newItem" required><br>
-                        Assign to person: 
+                        Who will use it?: 
                         <select name="Name" required>
                             <option value=""></option>
                             <?php
@@ -53,7 +53,7 @@
                             }
                             ?>
                         </select><br>       
-                        Assign to camping location: 
+                        Camping location: 
                         <select name="Activity" required>
                             <option value=""></option>
                             <?php

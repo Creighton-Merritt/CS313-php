@@ -69,4 +69,20 @@ FROM items inner join person on person_name_id = person_id
 inner join activity on activity_name_id = activity_id
 WHERE item_name LIKE 'Test%';
 
+--Test update
+UPDATE items
+SET 
+item_name = '$new_item_name',
+person_name_id = (SELECT person_id FROM person WHERE first_name = '$name'),
+activity_name_id = (SELECT activity_id FROM activity WHERE activity_name = '$activity'),
+location_name_id = (SELECT location_id FROM location WHERE item_location = '$location')
+WHERE item_id = '$item_id'
+
+UPDATE items
+SET 
+item_name = 'Testy',
+person_name_id = (SELECT person_id FROM person WHERE first_name = 'Merritt'),
+activity_name_id = (SELECT activity_id FROM activity WHERE activity_name = 'Uinta Mountains'),
+location_name_id = (SELECT location_id FROM location WHERE item_location = 'Garage')
+WHERE item_id = 96;
 

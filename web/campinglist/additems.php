@@ -1,4 +1,5 @@
 <?php
+    // Queries for drop down lists below
     require ('dbConnect.php');
     $db = get_db();
     $pstmt = $db->prepare("SELECT first_name from person;");
@@ -40,6 +41,7 @@
             <div class ="row">
                 <div class="col-md-6"> 
                     <h2>Add item to list</h2>
+                    <!-- Form for adding items. I run a query for each drop down list category and pass the value to itemadded.php -->
                     <form action="itemadded.php" method="POST">
                         Item name: 
                         <input type="text" name="newItem" required><br>
@@ -76,6 +78,7 @@
                         <input type="submit" value="Submit"><br>
                     </form>  
                     <?php
+                        // Code for confirmation message. If item was added it pops up for 1-2 seconds before the page refreshes.
                         if (isset($_GET['success']) && $_GET['success'] == 'true') {
                             echo '<p><strong>Item added!</strong></p>';
                             ?>

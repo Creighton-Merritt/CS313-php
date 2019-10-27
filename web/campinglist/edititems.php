@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <div class="container-fluid">
-        <h1>Edit Item Details</h1>
+        <h1>Manage Database</h1>
     </div>
 </head>
 <body>
@@ -38,6 +38,7 @@
     <div class="col-md-auto">
         <h2>Item lookup</h2>
         <?php
+        //Display only this menu when page is loaded
         if(!isset($_REQUEST['submit_btn'])) {
             ?>
             <form action="" method="POST">
@@ -49,6 +50,7 @@
         }
         ?>
         <?php
+        //After form is submitted the query is run here and items are listed with radio buttons.
         if(isset($_REQUEST['submit_btn'])) {
             $select_item = $_POST["s_item_name"];
             $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
@@ -74,6 +76,7 @@
             </form>
         <?php
         }
+        //Menu appears if a record is selected to edit
         if(isset($_REQUEST['edit'])) {
             $get_item = $_POST['checked'];
             if(empty($get_item)) {
@@ -90,8 +93,10 @@
                     $itemid = $row['item_id'];
                     
                     ?>
+                    <!-- User can edit item name and all other details except item_id -->
                     <form action="itemedited.php" method="POST">
                         <br><br>
+                        <h2>Edit item details</h2><br>
                         Item name: 
                         <?php        
                         echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
@@ -135,6 +140,7 @@
         }
         ?>
         <?php
+        //Code for confirmation message if query is successful. 
         if (isset($_GET['edit']) && $_GET['edit'] == 'true') {
             echo "<strong>Item updated!</strong><br><br>";
             ?>

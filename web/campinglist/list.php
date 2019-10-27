@@ -21,8 +21,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!-- <script src="javascript/main.js"></script> -->
-
 
     <div class="container-fluid">
         <h1><?php echo $name?> 's <?php echo $location ?> Packing List</h1>
@@ -55,7 +53,7 @@
 
                 if ($location == "Bear Lake") { 
                     $loc1 = "1"; 
-                } else if ($location == "Mountains") {
+                } else if ($location == "Uinta Mountains") {
                     $loc1 = "2"; 
                 } else if ($location == "San Rafael Swell") {
                         $loc1 = "3";
@@ -74,6 +72,7 @@
                 $first = true;
                 $previous_location_name_id = 1;
                 
+                //List items by location in house to make packing more efficient. 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $current_location_name_id = $row['location_name_id'];

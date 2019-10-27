@@ -35,6 +35,8 @@
                 <div class="col-md-6"> 
                     <h2>Delete item from list</h2>
                     <?php
+                    //If the button has not been pressed (like right when the page is first loaded) then this menu will appear so you can search
+                    //for items to delete.
                     if(!isset($_REQUEST['submit_btn'])) {
                         ?>
                         <form action="" method="POST">
@@ -46,6 +48,7 @@
                     }
                     ?>
                     <?php
+                    //After the Search button is pressed I run this select query to list all the items that match the search. 
                     if(isset($_REQUEST['submit_btn'])) {
                         $delete_item = $_POST["d_item_name"];
                         $statement = $db->prepare("SELECT item_name, item_id, first_name, activity_name
@@ -56,6 +59,7 @@
                         ?>
                         <form action="itemdeleted.php" method="POST">
                         <?php
+                            //List each item with a checkbox so more than one record can be deleted at a time.
                             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                             {
                                 $ditem_id = $row['item_id'];
@@ -71,6 +75,7 @@
                     }
                     ?>
                     <?php
+                        //After deletion a confirmation message will appear for 1-2 seconds before page resets.
                         if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
                             echo "<strong>Item deleted!</strong><br><br>";
                             ?>

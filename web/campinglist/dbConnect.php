@@ -1,4 +1,6 @@
 <?php
+
+//Connect to database
     function get_db() {
         $db = NULL;
             try

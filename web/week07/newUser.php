@@ -6,11 +6,11 @@
     $password = htmlspecialchars($_POST['userpass']);
 
     // Redirect to signup.php
-    if(//no username or password)
-    {
-        header("Location: signup.php");
-        die(); 
-    }
+    // if(//no username or password)
+    // {
+    //     header("Location: signup.php");
+    //     die(); 
+    // }
 
     // Hash the password and insert into database
 

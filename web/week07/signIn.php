@@ -9,7 +9,7 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 	$db = get_db();
 
 	$stmt = $db->prepare("SELECT user_password FROM login WHERE username = :username");
-	$stmt->bindValue(':username', $usernam, PDO::PARAM_STR);
+	$stmt->bindValue(':username', $username, PDO::PARAM_STR);
 	$stmt->execute();
 
 	$row = $stmt->fetch();

@@ -15,14 +15,14 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 	$row = $stmt->fetch();
 	$dbPassword = $row['user_password'];
 	
-	$hashcheck = password_verify($dbPassword, $password);
-	if (!$hashcheck) {
-		header("Location:signIn.php");
-		die();
-	} else {
+	
+	if (password_verify($dbPassword, $password)) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['username'] = $username;
 		header("Location:welcome.php");
+	} else {
+		header("Location:signIn.php");
+		die();
 	}
 }
 

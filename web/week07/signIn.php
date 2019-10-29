@@ -8,7 +8,7 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 	require("dbConnect.php");
 	$db = get_db();
 
-	$stmt = $db->prepare("SELECT user_password FROM login WHERE username = :username");
+	$stmt = $db->prepare("SELECT user_password FROM userlogin WHERE username = :username");
 	$stmt->bindValue(':username', $username, PDO::PARAM_STR);
 	$stmt->execute();
 

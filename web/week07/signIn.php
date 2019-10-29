@@ -10,19 +10,21 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 
 	$stmt = $db->prepare("SELECT user_password FROM userlogin WHERE username = :username");
 	$stmt->bindValue(':username', $username, PDO::PARAM_STR);
-	$stmt->execute();
+	$result = $stmt->execute();
 
-	$row = $stmt->fetch();
-	$dbPassword = $row['user_password'];
+	if ($result) {
+		$row = $stmt->fetch();
+		$dbPassword = $row['user_password'];
 	
+		if (password_verify($password, $dbPassword)) {
+			$_SESSION['loggedin'] = TRUE;
+			$_SESSION['username'] = $username;
+			header("Location:welcome.php");
+		} else {
+			header("Location:signIn.php");
+			die();
+		}
 	
-	if (password_verify($dbPassword, $password)) {
-		$_SESSION['loggedin'] = TRUE;
-		$_SESSION['username'] = $username;
-		header("Location:welcome.php");
-	} else {
-		header("Location:signIn.php");
-		die();
 	}
 }
 

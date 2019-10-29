@@ -21,7 +21,7 @@
 
 </form>
 <br><br>
-No Account? <a href="signUp.php">Sign up here.</a>
+No Account? <a href="signUp.php">Sign up here.</a><br><br>
 
 </div>
 

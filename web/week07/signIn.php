@@ -22,6 +22,7 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 	} else {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['username'] = $username;
+		header("Location:welcome.php");
 	}
 }
 

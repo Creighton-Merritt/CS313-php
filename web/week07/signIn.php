@@ -1,5 +1,6 @@
 <?php
 session_start();
+$badLogin = false;
 
 if (isset($_POST['username']) && isset($_POST['userpass'])) {
 	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -8,8 +9,9 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 	require("dbConnect.php");
 	$db = get_db();
 
-	$stmt = $db->prepare("SELECT user_password FROM userlogin WHERE username = :username");
-	$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+	$query = 'SELECT user_password FROM userlogin WHERE username = :username';
+	$stmt = $db->prepare($query);
+	$stmt->bindValue(':username', $username);
 	$result = $stmt->execute();
 
 	if ($result) {
@@ -17,14 +19,15 @@ if (isset($_POST['username']) && isset($_POST['userpass'])) {
 		$dbPassword = $row['user_password'];
 	
 		if (password_verify($password, $dbPassword)) {
-			$_SESSION['loggedin'] = TRUE;
 			$_SESSION['username'] = $username;
 			header("Location:welcome.php");
-		} else {
-			header("Location:signIn.php");
 			die();
+		} else {
+			$badLogin = true;
 		}
 	
+	} else {
+		$badLogin = true;
 	}
 }
 

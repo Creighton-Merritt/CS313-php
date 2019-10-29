@@ -1,11 +1,15 @@
 <?php
-session+_start();
-	if (!$_SESSION['loggedin'] = TRUE) {
-	header("Location:signIn.php");
-	die();
-} else {
-	$username = $_SESSION['username'];
-}
+session_start();
+	if (isset($_SESSION['username']))
+	{
+		$username = $_SESSION['username'];
+	}
+	else
+	{
+		header("Location: signIn.php");
+		die(); // we always include a die after redirects.
+	}
+
 
 ?>
 

@@ -1,13 +1,4 @@
-<?php
-    require "dbConnect.php";
-    $db = get_db();
 
-    $name = htmlspecialchars($_POST['Name']);
-    $location = htmlspecialchars($_POST['Location']);
-    $name1;
-    $name2;
-    $loc1;
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +19,7 @@
         <?php
         if(!isset($_REQUEST['submit_btn'])) {
         ?>
-        <form action="" method="post">
+        <form action="" method="POST">
             Name: 
             <select name="Name">
                 <option hidden disabled selected value></option>
@@ -49,6 +40,9 @@
             <?php
             }
             if(isset($_REQUEST['submit_btn'])) {
+                $name = htmlspecialchars($_POST['Name']);
+                $location = htmlspecialchars($_POST['Location']);
+
                 if ($name == 'Coty') {
                     $name1 = "1";
                     $name2 = "8";
@@ -68,9 +62,12 @@
                 } else if ($location == "Uinta Mountains") {
                     $loc1 = "2"; 
                 } else if ($location == "San Rafael Swell") {
-                        $loc1 = "3";
+                    $loc1 = "3";
                 }
                 
+                require "dbConnect.php";
+                $db = get_db();
+            
                 $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
                         FROM location
                         LEFT JOIN items
@@ -79,7 +76,7 @@
                         AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
                         ORDER BY location_name_id;");
                 $statement->execute();
-                echo "<table><tr>";
+                echo "<br><div><table><tr>";
                 $count = 0;
                 $first = true;
                 $previous_location_name_id = 1;
@@ -115,7 +112,7 @@
                     }
                     
                 }  
-                echo "</tr></table>";
+                echo "</tr></table></div>";
             }
             ?>
     </div>

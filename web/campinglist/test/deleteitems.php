@@ -61,15 +61,6 @@
                     <?php
                     }
                     ?>
-                    <?php
-                        //After deletion a confirmation message will appear for 1-2 seconds before page resets.
-                        if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
-                            echo "<strong>Item deleted!</strong><br><br>";
-                            ?>
-                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/deleteitems.php"/>
-                            <?php
-                        }
-                    ?>
                 </div>
             </div>
         </div>

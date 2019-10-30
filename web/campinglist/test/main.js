@@ -3,7 +3,7 @@ $('#sidebar-left').unbind('click').click(function(e){
     e.stopPropagation();
 
     // please provide the URL of the PHP page
-    var url = 'generatelist.html';
+    var url = 'https://hidden-lowlands-67545.herokuapp.com/campinglist/test/generatelist.html';
 
     $.post(url,
         function(data) {

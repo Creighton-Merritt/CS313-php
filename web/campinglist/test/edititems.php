@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="col-md-auto">
-        <h2>Item lookup</h2>
+        <h3>Item lookup</h3>
         <?php
         //Display only this menu when page is loaded
         if(!isset($_REQUEST['submit_btn'])) {

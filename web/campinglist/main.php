@@ -41,7 +41,7 @@
                     }
     
                     // Dynamic page based on query string
-                    include($page . '.php');
+                    include($page . '.php'); 
                 ?>
             </div>
     </body>

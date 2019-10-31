@@ -32,7 +32,7 @@
                 <option value="Uinta Mountains">Uinta Mountains</option>
                 <option value="San Rafael Swell">San Rafael Swell</option>
             </select>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit"> 
         </form>
     </div>
 </body>

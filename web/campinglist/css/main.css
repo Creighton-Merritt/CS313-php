@@ -102,7 +102,7 @@ head, body {
     padding:10px 15px;
     color:rgb(211, 123, 72);
     border-bottom:none;
-    border-width: 0px 1px 0 0;
+    border-width: 0px 1px 0px 0px;
     border-color: #000;
     border-style: solid;
     background-color: rgb(240, 240, 240);
@@ -113,5 +113,5 @@ head, body {
   }
   
    #menu a:last-child { 
-   border-width: 0 0 0 0; 
+   border-width: 0px 0px 0px 0px; 
   }

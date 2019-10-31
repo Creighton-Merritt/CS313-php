@@ -21,7 +21,7 @@ head, body {
   #menu {
     justify-content: center;
   }
-  
+
   h2 { 
       color:rgb(211, 123, 72);
       font-family:charlemagne std;
@@ -69,11 +69,13 @@ head, body {
   table {
     display: table;
   }
+
   table tr {
     width: 250px;
     display: table-cell;
     vertical-align: top;
   }
+  
   table tr td {
     width: 250px;
     display: block;
@@ -98,7 +100,7 @@ head, body {
 
   a #content{
     display:block;
-    float:left;
+    /* float:left; */
     padding:10px 15px;
     background:#aaa;
     border:1px solid #777;

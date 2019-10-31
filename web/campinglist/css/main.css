@@ -105,7 +105,7 @@ head, body {
     border-width: 1px 1px 0 0;
     border-color: #000;
     border-style: solid;
-    background-color: lightgray;
+    background-color: rgb(240, 240, 240);
     font-size: 100%;
     float:left;
     box-shadow: 10px 10px 5px grey;

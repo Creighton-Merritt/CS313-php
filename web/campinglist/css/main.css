@@ -98,16 +98,20 @@ head, body {
     visibility: hidden;
   }
 
-  a #content{
-    display:block;
-    /* float:left; */
+  #menu a{
     padding:10px 15px;
-    background:#aaa;
-    border:1px solid #777;
+    background-color: #fff;
     border-bottom:none;
-    border-radius:4px 4px 0 0;
-    margin-right:1px;
+    border-width: 1px 1px 0 0;
+    border-color: #000;
+    border-style: solid;
     color:rgb(92, 58, 30);
     font-size: 100%;
-
+    float:left;
+    box-shadow: 10px 10px 5px grey;
+    text-decoration: none;
   }
+  
+  #menu a:last-child { 
+    border-width: 1px 0 0 0; 
+   }

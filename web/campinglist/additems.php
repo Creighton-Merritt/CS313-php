@@ -27,9 +27,9 @@
         <div class = "container-fluid">
             <div class ="row">
                 <div class="col-md-6"> 
-                    <h2>Add item to list</h2>
                     <!-- Form for adding items. I run a query for each drop down list category and pass the value to itemadded.php -->
                     <form action="itemadded.php" method="POST">
+                    <h3>Add item to list</h3>
                         Item name: 
                         <input type="text" name="newItem" required><br>
                         Who will use it?: 

@@ -24,12 +24,12 @@
 </head>
 <body>
     <div class="col-md-auto">
-        <h2>Item lookup</h2>
         <?php
         //Display only this menu when page is loaded
         if(!isset($_REQUEST['submit_btn'])) {
             ?>
             <form action="" method="POST">
+                <strong>Item lookup</strong>
                     Item name: 
                     <input type="text" name="s_item_name" required><br>
                     <input type="submit" value="Search" name="submit_btn"><br>

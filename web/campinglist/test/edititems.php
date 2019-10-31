@@ -22,21 +22,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
-    <div class="container-fluid">
-        <h1>Manage Database</h1>
-    </div>
-</head>
-<body>
-    <div class="container-fluid">
-            <a id="home" href="main.html">&#9668; Back </a>
-            <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
-            <br>
-    </div>
-    <div id="hrline" class="container-fluid">
-            <hr>
-    </div>
+
     <div class="col-md-auto">
-        <h2>Item lookup</h2>
+        <h3>Item lookup</h3>
         <?php
         //Display only this menu when page is loaded
         if(!isset($_REQUEST['submit_btn'])) {

@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
 
     <div class="container-fluid">
         <h1>Camping List Database</h1>
@@ -33,9 +33,9 @@
         <div id="Content"> 
             <?php
                 if(isset($_GET['page']) && $_GET['page'] != '' ){    
-                $page = $_GET['page']; // page being requested
+                    $page = $_GET['page']; // page being requested
                 }else{
-                $page = 'home'; // default page
+                    $page = 'home'; // default page
                 }
 
                 // Dynamic page based on query string

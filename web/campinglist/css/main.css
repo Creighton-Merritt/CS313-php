@@ -18,6 +18,10 @@ head, body {
     }
   }
   
+  #menu {
+    justify-content: center;
+  }
+  
   h2 { 
       color:rgb(211, 123, 72);
       font-family:charlemagne std;
@@ -27,7 +31,7 @@ head, body {
   }
   
   #hrline {
-    margin-bottom:100px;
+    margin-bottom:50px;
   }
   
   hr {

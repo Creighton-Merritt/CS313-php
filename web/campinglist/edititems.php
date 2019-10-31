@@ -85,9 +85,8 @@
                     <form action="itemedited.php" method="POST">
                         <br><br>
                         <h3>Edit item details</h3><br>
-                        Item name: 
                         <?php        
-                        echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";
+                        echo"Item name: <input type='text' name='itemid' value='$itemid' id='hidden'><br>";
                         echo"<input type='text' name='itemname' value='$itemname'required><br>";
                     }
                         ?>

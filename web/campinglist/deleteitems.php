@@ -20,6 +20,7 @@
         <div class = "container-fluid">
             <div class ="row">
                 <div class="col-md-6"> 
+                <h3>Item lookup</h3>
                     <?php
                     //If the button has not been pressed (like right when the page is first loaded) then this menu will appear so you can search
                     //for items to delete.

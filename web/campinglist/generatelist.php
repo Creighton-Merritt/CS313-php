@@ -15,25 +15,25 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
  <body>   
     <div class="col-md-auto">
-            <h3>Create list for:</h3>
-            <form action="main.php?page=list" method="post">
-                Name: 
-                <select name="Name">
-                    <option hidden disabled selected value></option>
-                    <option value="Coty">Coty</option>
-                    <option value="Merritt">Merritt</option>
-                    <option value="Ethne">Ethne</option>
-                    <option value="Indie">Indie</option>
-                </select> <br>
-                Camping location:
-                <select name="Location">
-                    <option hidden disabled selected value></option>
-                    <option value="Bear Lake">Bear Lake</option>
-                    <option value="Uinta Mountains">Uinta Mountains</option>
-                    <option value="San Rafael Swell">San Rafael Swell</option>
-                </select>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+        <form action="main.php?page=list" method="post">
+        <h3>Create list for:</h3>
+            Name: 
+            <select name="Name">
+                <option hidden disabled selected value></option>
+                <option value="Coty">Coty</option>
+                <option value="Merritt">Merritt</option>
+                <option value="Ethne">Ethne</option>
+                <option value="Indie">Indie</option>
+            </select> <br>
+            Camping location:
+            <select name="Location">
+                <option hidden disabled selected value></option>
+                <option value="Bear Lake">Bear Lake</option>
+                <option value="Uinta Mountains">Uinta Mountains</option>
+                <option value="San Rafael Swell">San Rafael Swell</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>

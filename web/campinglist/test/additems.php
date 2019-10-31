@@ -62,15 +62,6 @@
                         </select><br>
                         <input type="submit" value="Submit"><br>
                     </form>  
-                    <?php
-                        // Code for confirmation message. If item was added it pops up for 1-2 seconds before the page refreshes.
-                        if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                            echo '<p><strong>Item added!</strong></p>';
-                            ?>
-                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/test/main.php?page=additems"/>
-                            <?php
-                        }
-                    ?>
                 </div>
             </div>
         </div>

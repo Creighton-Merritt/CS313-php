@@ -84,7 +84,7 @@
                     <!-- User can edit item name and all other details except item_id -->
                     <form action="itemedited.php" method="POST">
                         <br><br>
-                        <h2>Edit item details</h2><br>
+                        <h3>Edit item details</h3><br>
                         Item name: 
                         <?php        
                         echo"<input type='text' name='itemid' value='$itemid' id='hidden'><br>";

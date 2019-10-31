@@ -15,21 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
-
-    <div class="container-fluid">
-        <h1>Manage Database</h1>
-    </div>
 </head>
     <body>
-        <div class="container-fluid">
-                <a id="home" href="main.html">&#9668; Back </a>
-                <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
-                <br>
-        </div>
-        <div id="hrline" class="container-fluid">
-                <hr>
-        </div>
         <div class = "container-fluid">
             <div class ="row">
                 <div class="col-md-6"> 
@@ -73,15 +60,6 @@
                         </form>
                     <?php
                     }
-                    ?>
-                    <?php
-                        //After deletion a confirmation message will appear for 1-2 seconds before page resets.
-                        if (isset($_GET['deleted']) && $_GET['deleted'] == 'true') {
-                            echo "<strong>Item deleted!</strong><br><br>";
-                            ?>
-                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/deleteitems.php"/>
-                            <?php
-                        }
                     ?>
                 </div>
             </div>

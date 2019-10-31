@@ -22,21 +22,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
-
-    <div class="container-fluid">
-        <h1>Manage Database</h1>
-    </div>
 </head>
     <body>
-        <div class="container-fluid">
-                <a id="home" href="main.html">&#9668; Back </a>
-                <a id="assignments" href="../assignments.php">CS-313 Assignments &#9658;</a>
-                <br>
-        </div>
-        <div id="hrline" class="container-fluid">
-                <hr>
-        </div>
         <div class = "container-fluid">
             <div class ="row">
                 <div class="col-md-6"> 
@@ -77,15 +64,6 @@
                         </select><br>
                         <input type="submit" value="Submit"><br>
                     </form>  
-                    <?php
-                        // Code for confirmation message. If item was added it pops up for 1-2 seconds before the page refreshes.
-                        if (isset($_GET['success']) && $_GET['success'] == 'true') {
-                            echo '<p><strong>Item added!</strong></p>';
-                            ?>
-                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
-                            <?php
-                        }
-                    ?>
                 </div>
             </div>
         </div>

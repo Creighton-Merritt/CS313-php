@@ -17,7 +17,7 @@
             $stmt->execute();
         }
 
-        $new_page = "deleteitems.php?deleted=true";
+        $new_page = "main.php?page=deleteitems";
         header("Location: $new_page");
         exit;   
     } 

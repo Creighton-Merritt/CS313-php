@@ -32,7 +32,7 @@
                 <p>"79% of stair accidents happen on the stairs!" - Gumball Watterson</p>
                 <br>
                 <a href="week03/week03product.php">Week 03 - PHP Shopping Cart</a><br>
-                <a href="campinglist/main.html">Week 05 - Camping List</a>
+                <a href="campinglist/main.php">Week 05 - Camping List</a>
         </div>
     
 </body>

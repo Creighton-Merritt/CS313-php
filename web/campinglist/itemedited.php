@@ -15,7 +15,7 @@
                     location_name_id = (SELECT location_id FROM location WHERE item_location = '$location')
                     WHERE item_id = $itemid;");
     $statement->execute();
-    $new_page = "edititems.php?edit=true";
+    $new_page = "main.php?page=edititems";
     header("Location: $new_page");
     exit;   
 ?>

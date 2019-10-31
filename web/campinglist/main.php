@@ -23,18 +23,26 @@
         </div>
         <div id="hrline" class="container-fluid">
                 <hr>
-        </div>
-        <div class="container-fluid">
-            <div class="row justify-content-between, justify-content-around">
-                <div class="col-md-auto"> 
-                        <a id="list" href="generatelist.html">Generate camping list</a><br><br>
-                        <a id="list" href="additems.php">Add items</a><br><br>
-                        <a id="list" href="deleteitems.php">Delete items</a><br><br>
-                        <a id="list" href="edititems.php">Edit item details</a>
+                <div id="menu">
+                    <a href="main.php?page=generatelist">Generate camping list</a>
+                    <a href="main.php?page=additems">Add items</a>
+                    <a href="main.php?page=deleteitems">Delete items</a>
+                    <a href="main.php?page=edititems">Edit item details</a>
                 </div>
             </div>
-        </div>
-</body>
+            <div id="Content"> 
+                <?php
+                    if(isset($_GET['page']) && $_GET['page'] != '' ){    
+                        $page = $_GET['page']; // page being requested
+                    }else{
+                        $page = 'home'; // default page
+                    }
+    
+                    // Dynamic page based on query string
+                    include($page . '.php');
+                ?>
+            </div>
+    </body>
 </html>
 
 

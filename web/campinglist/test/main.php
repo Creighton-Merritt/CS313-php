@@ -23,12 +23,12 @@
         </div>
         <div id="hrline" class="container-fluid">
             <hr>
-        </div>
-        <div id="menu">
-            <a href="main.php?page=generatelist">Generate camping list</a>
-            <a href="main.php?page=additems">Add items</a>
-            <a href="main.php?page=deleteitems">Delete items</a>
-            <a href="main.php?page=edititems">Edit item details</a>
+            <div id="menu">
+                <a href="main.php?page=generatelist">Generate camping list</a>
+                <a href="main.php?page=additems">Add items</a>
+                <a href="main.php?page=deleteitems">Delete items</a>
+                <a href="main.php?page=edititems">Edit item details</a>
+            </div>
         </div>
         <div id="Content"> 
             <?php

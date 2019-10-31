@@ -15,7 +15,7 @@
    
         <div class="col-md-auto">
             <h3>Create list for:</h3>
-            <form action="list.php" method="post">
+            <form action="main.php?page=list" method="post">
                 Name: 
                 <select name="Name">
                     <option hidden disabled selected value></option>

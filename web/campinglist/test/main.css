@@ -1,0 +1,93 @@
+head, body {
+    background-color: lightgray
+  }
+  
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family:georgia;
+    color:rgb(92, 58, 30);
+  }
+
+  /* override styles when printing */
+  @media print {
+    body {
+      margin: 0;
+      color: #000;
+      background-color: #fff;
+    }
+  }
+  
+  h1 {
+      color:rgb(211, 123, 72);
+      font-family:charlemagne std;
+      text-align:center;
+      margin-bottom:35px;
+      padding-top: 6%;
+  }
+  
+  #hrline {
+    margin-bottom:100px;
+  }
+  
+  hr {
+      height:.7px;
+      background-color: #333;
+  }
+  
+  .col-sm-4 {
+      font-size: 120%;
+  } 
+  
+  div {
+    margin:0 5% 0 5%;
+  }  
+    
+  #list {
+    color:rgb(92, 58, 30);
+    font-size: 140%;
+  }
+
+  #home {
+    float: left;
+    color:rgb(92, 58, 30);
+    font-size: 100%;
+    font-weight: bold;
+  }
+
+  #assignments {
+    float: right;
+    color:rgb(92, 58, 30);
+    font-size: 100%;
+    font-weight: bold;
+  }
+  
+  table {
+    display: table;
+  }
+  table tr {
+    width: 250px;
+    display: table-cell;
+    vertical-align: top;
+  }
+  table tr td {
+    width: 250px;
+    display: block;
+  }
+
+  .roomHeader {
+    margin-top: 15px;
+  }
+
+  .page {
+    display: table;
+    width: 100%;
+  }
+
+  .page-content {
+    display: table-cell;
+  }
+
+  #hidden {
+    visibility: hidden;
+  }

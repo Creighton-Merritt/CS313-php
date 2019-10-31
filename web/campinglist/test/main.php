@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="campinglist\css\main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 
     <div class="container-fluid">
         <h1>Camping List Database</h1>
@@ -24,7 +24,7 @@
         <div id="hrline" class="container-fluid">
             <hr>
         </div>
-        <div -d="menu">
+        <div id="menu">
             <a href="main.php?page=generatelist">Generate camping list</a>
             <a href="main.php?page=additems">Add items</a>
             <a href="main.php?page=deleteitems">Delete items</a>

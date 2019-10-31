@@ -67,7 +67,7 @@
                         if (isset($_GET['success']) && $_GET['success'] == 'true') {
                             echo '<p><strong>Item added!</strong></p>';
                             ?>
-                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/additems.php"/>
+                                <meta http-equiv="refresh" content="1;URL=https://hidden-lowlands-67545.herokuapp.com/campinglist/test/main.php?page=additems"/>
                             <?php
                         }
                     ?>

@@ -35,7 +35,7 @@
                 if(isset($_GET['page']) && $_GET['page'] != '' ){    
                 $page = $_GET['page']; // page being requested
                 }else{
-                $page = 'main'; // default page
+                $page = 'home'; // default page
                 }
 
                 // Dynamic page based on query string

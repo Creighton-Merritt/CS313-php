@@ -26,7 +26,7 @@
     <div class="col-md-auto">
         <?php
         //Display only this menu when page is loaded
-        if(!isset($_REQUEST['submit_btn'])) {
+        if(!isset($_REQUEST['submit_btn']) && !isset($_REQUEST['edit'])) {
             ?>
             <form action="" method="POST">
                 <h3>Item lookup</h3>

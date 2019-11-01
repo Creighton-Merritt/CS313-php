@@ -26,9 +26,6 @@
         </div>
         <div id="hrline" class="container-fluid">
                 <hr>
-                <!-- <div id="menu" class="d-flex justify-content-center">
- 
-                </div> -->
             </div>
             <div class="row">
                 <div id="menu">

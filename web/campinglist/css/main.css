@@ -107,7 +107,7 @@ table tr td {
   color: rgb(233, 233, 233);
 }
 
-#menu a:active {
+#menu a:after {
   background-color: #777;
   color: rgb(233, 233, 233);
 }

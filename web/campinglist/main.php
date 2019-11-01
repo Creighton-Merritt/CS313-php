@@ -30,7 +30,7 @@
                 </div> -->
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="left">
                     <a id="content" href="main.php?page=generatelist">Generate camping list</a>
                     <a id="content" href="main.php?page=additems">Add items</a>
                     <a id="content" href="main.php?page=deleteitems">Delete items</a>

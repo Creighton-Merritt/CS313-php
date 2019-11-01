@@ -98,11 +98,12 @@ head, body {
     visibility: hidden;
   }
 
-  .com-md-4 {
-    padding: 0px 0px 0px 0px;
-    float:left;
+  .left {
+    width: 20px;
+    float: left;
   }
-  .col-md-4 a{
+
+  .left a{
     display: block;
     padding:10px 15px;
     color:rgb(211, 123, 72);

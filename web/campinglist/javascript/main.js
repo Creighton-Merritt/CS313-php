@@ -1,5 +1,7 @@
-$("a").click(function(e) {
-    e.preventDefault();
-    $("a").removeClass("selected");
-    $(this).addClass("selected");
-  });
+$(function() {
+    $("a").click(function(e) {
+        e.preventDefault();
+        $("a").removeClass("selected");
+        $(this).addClass("selected");
+      });
+    });

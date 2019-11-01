@@ -25,25 +25,29 @@
         </div>
         <div id="hrline" class="container-fluid">
                 <hr>
-                <div id="menu" class="d-flex justify-content-center">
+                <!-- <div id="menu" class="d-flex justify-content-center">
+
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-md-4">
                     <a id="content" href="main.php?page=generatelist">Generate camping list</a>
                     <a id="content" href="main.php?page=additems">Add items</a>
                     <a id="content" href="main.php?page=deleteitems">Delete items</a>
                     <a id="content" href="main.php?page=edititems">Edit item details</a>
                 </div>
-            </div>
-            <div id="Content"> 
-                <?php
-                    if(isset($_GET['page']) && $_GET['page'] != '' ){    
-                        $page = $_GET['page']; // page being requested
-                    }else{
-                        $page = 'home'; // default page
-                    }
-    
-                    // Dynamic page based on query string
-                    include($page . '.php'); 
-                ?>
-            </div>
+                <div class="col-md-6" id="Content"> 
+                    <?php
+                        if(isset($_GET['page']) && $_GET['page'] != '' ){    
+                            $page = $_GET['page']; // page being requested
+                        }else{
+                            $page = 'home'; // default page
+                        }
+        
+                        // Dynamic page based on query string
+                        include($page . '.php'); 
+                    ?>
+                </div>
     </body>
 </html>
 

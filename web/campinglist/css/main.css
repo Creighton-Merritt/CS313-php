@@ -98,7 +98,7 @@ head, body {
     visibility: hidden;
   }
 
-  #menu a{
+  .col-md-4 a{
     padding:10px 15px;
     color:rgb(211, 123, 72);
     border-bottom:none;

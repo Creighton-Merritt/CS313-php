@@ -98,15 +98,10 @@ head, body {
     padding:10px 15px;
     color:rgb(92, 58, 30);
     /* background-color: rgb(240, 240, 240); */
-    font-size: 130%;
-    box-shadow: 10px 10px 5px grey;
+    font-size: 125%;
     text-decoration: none;
   }
   
    #menu a:last-child { 
    border-width: 0px 0px 0px 0px; 
-  }
-
-  #loadcontent {
-    background-color:#FFFF;
   }

@@ -29,7 +29,7 @@
         if(!isset($_REQUEST['submit_btn']) && !isset($_REQUEST['edit'])) {
             ?>
             <form action="" method="POST">
-                <h3>Item lookup</h3>
+                <h3>Edit: Item lookup</h3>
                     Item name: 
                     <input type="text" name="s_item_name" required><br>
                     <input type="submit" value="Search" name="submit_btn"><br>

@@ -2,112 +2,112 @@ head, body {
     background-color: rgb(233, 233, 233);
   }
   
-  body {
-    margin-left: 10%;
-    margin-right: 10%;
-    font-family:georgia;
-    color:rgb(92, 58, 30);
-  }
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family:georgia;
+  color:rgb(92, 58, 30);
+}
   
-  h2 { 
-      color:rgb(211, 123, 72);
-      font-family:charlemagne std;
-      text-align:center;
-      margin-bottom:35px;
-      padding-top: 6%;
-  }
+h2 { 
+  color:rgb(211, 123, 72);
+  font-family:charlemagne std;
+  text-align:center;
+  margin-bottom:35px;
+  padding-top: 6%;
+}
   
-  #hrline {
-    margin-bottom:50px;
-  }
+#hrline {
+  margin-bottom:50px;
+}
+
+hr {
+  height:.7px;
+  background-color: #333;
+}
   
-  hr {
-      height:.7px;
-      background-color: #333;
-  }
+.col-sm-4 {
+  font-size: 120%;
+} 
+
+div {
+  margin:0 5% 0 5%;
+}  
   
-  .col-sm-4 {
-      font-size: 120%;
-  } 
-  
-  div {
-    margin:0 5% 0 5%;
-  }  
-    
-  #list {
-    color:rgb(92, 58, 30);
-    font-size: 140%;
-  }
+#list {
+  color:rgb(92, 58, 30);
+  font-size: 140%;
+}
 
-  #home {
-    float: left;
-    color:rgb(92, 58, 30);
-    font-size: 100%;
-    font-weight: bold;
-  }
+#home {
+  float: left;
+  color:rgb(92, 58, 30);
+  font-size: 100%;
+  font-weight: bold;
+}
 
-  #assignments {
-    float: right;
-    color:rgb(92, 58, 30);
-    font-size: 100%;
-    font-weight: bold;
-  }
-  
-  table {
-    display: table;
-  }
+#assignments {
+  float: right;
+  color:rgb(92, 58, 30);
+  font-size: 100%;
+  font-weight: bold;
+}
 
-  table tr {
-    width: 150px;
-    display: table-cell;
-    vertical-align: top;
-  }
-  
-  table tr td {
-    width: 150px;
-    display: block;
-  }
+table {
+  display: table;
+}
 
-  .roomHeader {
-    margin-top: 15px;
-  }
+table tr {
+  width: 150px;
+  display: table-cell;
+  vertical-align: top;
+}
 
-  .page {
-    display: table;
-    width: 100%;
-  }
+table tr td {
+  width: 150px;
+  display: block;
+}
 
-  .page-content {
-    display: table-cell;
-  }
+.roomHeader {
+  margin-top: 15px;
+}
 
-  #hidden {
-    visibility: hidden;
-  }
+.page {
+  display: table;
+  width: 100%;
+}
 
-  #menu {
-    width: 250px;
-    float: left;
-    margin-right:2%;
-    margin-left:0%;
-  }
+.page-content {
+  display: table-cell;
+}
 
-  #menu a{
-    display: block;
-    margin:0px;
-    padding:10px 15px;
-    color:rgb(92, 58, 30);
-    /* background-color: rgb(240, 240, 240); */
-    font-size: 130%;
-    text-decoration: none;
-  }
-  
-   #menu a:last-child { 
-   border-width: 0px 0px 0px 0px; 
-  }
+#hidden {
+  visibility: hidden;
+}
 
-  #loadcontent {
-    float: left;
-    margin-right:2%;
-    margin-left:0%;
-  }
+#menu {
+  width: 250px;
+  float: left;
+  margin-right:2%;
+  margin-left:0%;
+}
+
+#menu a{
+  display: block;
+  margin:0px;
+  padding:10px 15px;
+  color:rgb(92, 58, 30);
+  /* background-color: rgb(240, 240, 240); */
+  font-size: 130%;
+  text-decoration: none;
+}
+
+  #menu a:last-child { 
+  border-width: 0px 0px 0px 0px; 
+}
+
+#loadcontent {
+  float: left;
+  margin-right:2%;
+  margin-left:0%;
+}

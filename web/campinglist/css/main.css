@@ -86,7 +86,7 @@ head, body {
   }
 
   #menu {
-    width: 100px;
+    width: 200px;
     float: left;
   }
 
@@ -94,12 +94,12 @@ head, body {
     display: block;
     margin:0px;
     padding:10px 15px;
-    color:rgb(211, 123, 72);
+    color:rgb(92, 58, 30);
     /* border-bottom:none;
     border-width: 0px 1px 0px 0px;
     border-color: #000;
     border-style: solid; */
-    background-color: rgb(240, 240, 240);
+    /* background-color: rgb(240, 240, 240); */
     font-size: 100%;
     /* box-shadow: 10px 10px 5px grey; */
     text-decoration: none;

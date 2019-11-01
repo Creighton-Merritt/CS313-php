@@ -97,16 +97,16 @@ head, body {
     margin:0px;
     padding:10px 15px;
     color:rgb(92, 58, 30);
-    border-bottom:none;
-    border-width: 0px 1px 0px 0px;
-    border-color: 10px 10px 5px grey;
-    border-style: solid;
     /* background-color: rgb(240, 240, 240); */
     font-size: 130%;
-    /* box-shadow: 10px 10px 5px grey; */
+    box-shadow: 10px 10px 5px grey;
     text-decoration: none;
   }
   
    #menu a:last-child { 
    border-width: 0px 0px 0px 0px; 
+  }
+
+  #loadcontent {
+    background-color:#FFFF;
   }

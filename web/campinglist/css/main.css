@@ -1,5 +1,5 @@
 head, body {
-    background-color: lightgray
+    background-color: #fff;
   }
   
   body {
@@ -98,7 +98,12 @@ head, body {
     visibility: hidden;
   }
 
+  .com-md-4 {
+    padding: 0px 0px 0px 0px;
+    float:left;
+  }
   .col-md-4 a{
+    display: block;
     padding:10px 15px;
     color:rgb(211, 123, 72);
     border-bottom:none;
@@ -107,7 +112,6 @@ head, body {
     border-style: solid;
     background-color: rgb(240, 240, 240);
     font-size: 100%;
-    float:left;
     box-shadow: 10px 10px 5px grey;
     text-decoration: none;
   }

@@ -103,7 +103,7 @@ table tr td {
   text-decoration: none;
 }
 
-#menu a.selected {
+#menu a.click {
   background: #777;
   color: #e9e9e9;
 }

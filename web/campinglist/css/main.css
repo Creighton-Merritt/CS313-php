@@ -92,15 +92,16 @@ head, body {
 
   #menu a{
     display: block;
+    margin:0px;
     padding:10px 15px;
     color:rgb(211, 123, 72);
-    border-bottom:none;
+    /* border-bottom:none;
     border-width: 0px 1px 0px 0px;
     border-color: #000;
-    border-style: solid;
+    border-style: solid; */
     background-color: rgb(240, 240, 240);
     font-size: 100%;
-    box-shadow: 10px 10px 5px grey;
+    /* box-shadow: 10px 10px 5px grey; */
     text-decoration: none;
   }
   

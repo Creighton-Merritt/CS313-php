@@ -36,7 +36,7 @@
                     <a id="content" href="main.php?page=deleteitems">Delete items</a>
                     <a id="content" href="main.php?page=edititems">Edit item details</a>
                 </div>
-                <div class="col-md-6" id="Content"> 
+                <div class="col-md-auto" id="Content"> 
                     <?php
                         if(isset($_GET['page']) && $_GET['page'] != '' ){    
                             $page = $_GET['page']; // page being requested

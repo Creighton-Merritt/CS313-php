@@ -89,6 +89,7 @@ head, body {
     width: 200px;
     float: left;
     margin-right:2%;
+    margin-left:2%;
   }
 
   #menu a{
@@ -96,10 +97,10 @@ head, body {
     margin:0px;
     padding:10px 15px;
     color:rgb(92, 58, 30);
-    /* border-bottom:none;
+    border-bottom:none;
     border-width: 0px 1px 0px 0px;
-    border-color: #000;
-    border-style: solid; */
+    border-color: 10px 10px 5px grey;
+    border-style: solid;
     /* background-color: rgb(240, 240, 240); */
     font-size: 130%;
     /* box-shadow: 10px 10px 5px grey; */

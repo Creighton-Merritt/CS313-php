@@ -55,17 +55,22 @@ div {
 
 table {
   display: table;
+  border-collapse: collapse;
 }
 
 table tr {
   width: 150px;
   display: table-cell;
   vertical-align: top;
+  padding: 0; 
+  margin: 0;
 }
 
 table tr td {
   width: 150px;
   display: block;
+  padding: 0; 
+  margin: 0;
 }
 
 .roomHeader {
@@ -86,10 +91,10 @@ table tr td {
 }
 
 #menu {
-  width: 250px;
+  width: 30%;
   float: left;
-  margin-right:2%;
-  margin-left:0%;
+  margin-right: 0%;
+  margin-left: 0%;
 }
 
 #menu a{
@@ -108,7 +113,7 @@ table tr td {
 
 #loadcontent {
   float: left;
-  margin-right:2%;
-  margin-left:3%;
+  margin-right: 0%;
+  margin-left: 0%;
   width: 70%;
 }

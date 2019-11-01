@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
     <body>
-        <div class="container-fluid">
             <?php
                 if ($name == 'Coty') {
                     $name1 = "1";
@@ -93,6 +92,5 @@
                 }  
                 echo "</tr></table>"
             ?> 
-        </div>
     </body>
 </html>

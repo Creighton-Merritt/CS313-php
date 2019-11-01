@@ -1,5 +1,5 @@
 head, body {
-    background-color: #fff;
+    background-color: rgb(233, 233, 233);
   }
   
   body {
@@ -90,7 +90,7 @@ head, body {
     float: left;
   }
 
-  .left a{
+  #menu a{
     display: block;
     padding:10px 15px;
     color:rgb(211, 123, 72);

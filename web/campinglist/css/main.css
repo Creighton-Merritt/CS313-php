@@ -58,13 +58,13 @@ head, body {
   }
 
   table tr {
-    width: 250px;
+    width: 150px;
     display: table-cell;
     vertical-align: top;
   }
   
   table tr td {
-    width: 250px;
+    width: 150px;
     display: block;
   }
 
@@ -89,7 +89,7 @@ head, body {
     width: 250px;
     float: left;
     margin-right:2%;
-    margin-left:2%;
+    margin-left:0%;
   }
 
   #menu a{
@@ -104,4 +104,10 @@ head, body {
   
    #menu a:last-child { 
    border-width: 0px 0px 0px 0px; 
+  }
+
+  #loadcontent {
+    float: left;
+    margin-right:2%;
+    margin-left:0%;
   }

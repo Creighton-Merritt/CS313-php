@@ -88,6 +88,7 @@ head, body {
   #menu {
     width: 200px;
     float: left;
+    margin-right:2%;
   }
 
   #menu a{
@@ -100,7 +101,7 @@ head, body {
     border-color: #000;
     border-style: solid; */
     /* background-color: rgb(240, 240, 240); */
-    font-size: 100%;
+    font-size: 130%;
     /* box-shadow: 10px 10px 5px grey; */
     text-decoration: none;
   }

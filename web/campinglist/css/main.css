@@ -87,7 +87,7 @@ table tr td {
 }
 
 #menu {
-  width: 30%;
+  width: 25%;
   float: left;
   margin-right: 0%;
   margin-left: 0%;
@@ -104,6 +104,12 @@ table tr td {
 
 #menu a:hover {
   background-color: #777;
+  color: rgb(233, 233, 233);
+}
+
+#menu a:active {
+  background-color: #777;
+  color: rgb(233, 233, 233);
 }
 
 

@@ -18,7 +18,7 @@
         <form action="main.php?page=list" method="post">
         <h3>Create list for:</h3>
             Name: 
-            <select name="Name">
+            <select name="Name" required>
                 <option hidden disabled selected value></option>
                 <option value="Coty">Coty</option>
                 <option value="Merritt">Merritt</option>
@@ -26,7 +26,7 @@
                 <option value="Indie">Indie</option>
             </select> <br>
             Camping location:
-            <select name="Location">
+            <select name="Location" required>
                 <option hidden disabled selected value></option>
                 <option value="Bear Lake">Bear Lake</option>
                 <option value="Uinta Mountains">Uinta Mountains</option>

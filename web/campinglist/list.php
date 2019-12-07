@@ -44,9 +44,7 @@
                     $loc1 = "2"; 
                 } else if ($location == "San Rafael Swell") {
                         $loc1 = "3";
-                } else if ($location == "San Rafael Swell") {
-                    $loc1 = "5";
-            }
+                }
                 
                 $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
                         FROM location

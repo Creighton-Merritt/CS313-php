@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <div class="container-fluid">
-        <h2>Camping List Database</h2>
+        <h2>Packing List Database</h2>
     </div>
 </head>
 <body>

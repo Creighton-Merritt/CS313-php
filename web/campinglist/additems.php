@@ -42,7 +42,7 @@
                             }
                             ?>
                         </select><br>       
-                        Camping location: 
+                        Activity/Camping location: 
                         <select name="Activity" required>
                             <option value=""></option>
                             <?php

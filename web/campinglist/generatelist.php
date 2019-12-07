@@ -31,6 +31,7 @@
                 <option value="Bear Lake">Bear Lake</option>
                 <option value="Uinta Mountains">Uinta Mountains</option>
                 <option value="San Rafael Swell">San Rafael Swell</option>
+                <option value="Snow Basin">Snow Basin</option>
             </select>
             <input type="submit" value="Submit"> 
         </form>

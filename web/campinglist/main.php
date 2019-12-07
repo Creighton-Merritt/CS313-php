@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <div id="menu">
-                    <a id="content" href="main.php?page=generatelist">Generate camping list</a>
+                    <a id="content" href="main.php?page=generatelist">Generate packing list</a>
                     <a id="content" href="main.php?page=additems">Add items</a>
                     <a id="content" href="main.php?page=deleteitems">Delete items</a>
                     <a id="content" href="main.php?page=edititems">Edit item details</a>

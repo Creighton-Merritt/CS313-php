@@ -44,15 +44,28 @@
                     $loc1 = "2"; 
                 } else if ($location == "San Rafael Swell") {
                         $loc1 = "3";
+                } else if ($location == "San Rafael Swell") {
+                    $loc1 = "5";
+            }
+                if ($loc1 == "5") {
+                    $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
+                            FROM location
+                            LEFT JOIN items
+                            ON (location_id = location_name_id)
+                            WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
+                            AND  ((activity_name_id = $loc1)
+                            ORDER BY location_name_id;");
+
+                } else {
+                    $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
+                            FROM location
+                            LEFT JOIN items
+                            ON (location_id = location_name_id)
+                            WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
+                            AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
+                            ORDER BY location_name_id;");
                 }
                 
-                $statement = $db->prepare("SELECT item_name, person_name_id, activity_name_id, location_name_id, item_location
-                        FROM location
-                        LEFT JOIN items
-                        ON (location_id = location_name_id)
-                        WHERE ((person_name_id = $name1) OR (person_name_id = $name2) or (person_name_id = 5))
-                        AND  ((activity_name_id = $loc1) OR (activity_name_id = 4))
-                        ORDER BY location_name_id;");
                 $statement->execute();
                 echo "<table><tr>";
                 $count = 0;

@@ -25,7 +25,7 @@
                 <option value="Ethne">Ethne</option>
                 <option value="Indie">Indie</option>
             </select> <br>
-            Camping location:
+            Activity/Camping location:
             <select name="Location" required>
                 <option hidden disabled selected value></option>
                 <option value="Bear Lake">Bear Lake</option>
